@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-final TextStyle textStyle = GoogleFonts.lora();
+final TextStyle textStyle = GoogleFonts.play();
 
-final TextTheme textThemeLight = GoogleFonts.loraTextTheme(ThemeData.light().textTheme);
+final TextTheme textThemeLight = GoogleFonts.playTextTheme(ThemeData.light().textTheme);
 
-final TextTheme textThemeDark = GoogleFonts.loraTextTheme(ThemeData.dark().textTheme);
+final TextTheme textThemeDark = GoogleFonts.playTextTheme(ThemeData.dark().textTheme);
