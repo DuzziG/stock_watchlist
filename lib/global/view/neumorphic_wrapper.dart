@@ -15,25 +15,37 @@ class NeumorphicWrapper extends StatelessWidget {
   final double? width;
 
   @override
-  Widget build(BuildContext context) => Container(
-        height: height,
-        width: width,
-        decoration: BoxDecoration(
-          color: context.colors.background,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade800,
-              offset: -OFFSET_2,
-              blurRadius: BLUR_12,
-            ),
-            const BoxShadow(
-              color: Colors.black,
-              offset: OFFSET_2,
-              blurRadius: BLUR_12,
-            ),
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        color: context.colors.background,
+        borderRadius: BorderRadius.circular(DOUBLE_16),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            context.colors.outline,
+            context.colors.outlineVariant,
           ],
         ),
-        child: child,
-      );
+        boxShadow: [
+          BoxShadow(
+            color: context.colors.outline,
+            offset: -OFFSET_8,
+            blurRadius: DOUBLE_12,
+            spreadRadius: DOUBLE_0,
+          ),
+          BoxShadow(
+            color: context.colors.outlineVariant,
+            offset: OFFSET_8,
+            blurRadius: DOUBLE_12,
+            spreadRadius: DOUBLE_0,
+          ),
+        ],
+      ),
+      child: Center(child: child),
+    );
+  }
 }
