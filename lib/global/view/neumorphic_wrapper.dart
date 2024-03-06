@@ -5,13 +5,19 @@ import 'package:stock_watchlist/global/util/dimens.dart';
 class NeumorphicWrapper extends StatelessWidget {
   const NeumorphicWrapper({
     required this.child,
+    this.height,
+    this.width,
     super.key,
   });
 
   final Widget child;
+  final double? height;
+  final double? width;
 
   @override
   Widget build(BuildContext context) => Container(
+        height: height,
+        width: width,
         decoration: BoxDecoration(
           color: context.colors.background,
           borderRadius: BorderRadius.circular(16),
