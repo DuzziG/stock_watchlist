@@ -39,3 +39,15 @@ const INSETS_VERTICAL_8 = EdgeInsets.symmetric(vertical: 8.0);
 const INSETS_VERTICAL_16 = EdgeInsets.symmetric(vertical: 16.0);
 
 const CARD_RADIUS = 16.0;
+
+const OFFSET_2 = Offset(2, 2);
+
+const OFFSET_4 = Offset(4, 4);
+
+const OFFSET_8 = Offset(8, 8);
+
+const BLUR_8 = 8.0;
+
+const BLUR_12 = 12.0;
+
+const BLUR_16 = 16.0;
