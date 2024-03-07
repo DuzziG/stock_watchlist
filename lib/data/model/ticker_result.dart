@@ -8,12 +8,12 @@ class TickerResult with _$TickerResult {
   const TickerResult._();
 
   const factory TickerResult({
-    required String ticker,
-    required String open,
-    required String close,
-    required String high,
-    required String low,
-    required String volume,
+    String? ticker,
+    String? open,
+    String? close,
+    String? high,
+    String? low,
+    String? volume,
   }) = _TickerResult;
 
   factory TickerResult.fromJson(Map<String, dynamic> json) => _$TickerResultFromJson(json);

@@ -20,12 +20,12 @@ TickerResult _$TickerResultFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TickerResult {
-  String get ticker => throw _privateConstructorUsedError;
-  String get open => throw _privateConstructorUsedError;
-  String get close => throw _privateConstructorUsedError;
-  String get high => throw _privateConstructorUsedError;
-  String get low => throw _privateConstructorUsedError;
-  String get volume => throw _privateConstructorUsedError;
+  String? get ticker => throw _privateConstructorUsedError;
+  String? get open => throw _privateConstructorUsedError;
+  String? get close => throw _privateConstructorUsedError;
+  String? get high => throw _privateConstructorUsedError;
+  String? get low => throw _privateConstructorUsedError;
+  String? get volume => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,12 +40,12 @@ abstract class $TickerResultCopyWith<$Res> {
       _$TickerResultCopyWithImpl<$Res, TickerResult>;
   @useResult
   $Res call(
-      {String ticker,
-      String open,
-      String close,
-      String high,
-      String low,
-      String volume});
+      {String? ticker,
+      String? open,
+      String? close,
+      String? high,
+      String? low,
+      String? volume});
 }
 
 /// @nodoc
@@ -61,38 +61,38 @@ class _$TickerResultCopyWithImpl<$Res, $Val extends TickerResult>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ticker = null,
-    Object? open = null,
-    Object? close = null,
-    Object? high = null,
-    Object? low = null,
-    Object? volume = null,
+    Object? ticker = freezed,
+    Object? open = freezed,
+    Object? close = freezed,
+    Object? high = freezed,
+    Object? low = freezed,
+    Object? volume = freezed,
   }) {
     return _then(_value.copyWith(
-      ticker: null == ticker
+      ticker: freezed == ticker
           ? _value.ticker
           : ticker // ignore: cast_nullable_to_non_nullable
-              as String,
-      open: null == open
+              as String?,
+      open: freezed == open
           ? _value.open
           : open // ignore: cast_nullable_to_non_nullable
-              as String,
-      close: null == close
+              as String?,
+      close: freezed == close
           ? _value.close
           : close // ignore: cast_nullable_to_non_nullable
-              as String,
-      high: null == high
+              as String?,
+      high: freezed == high
           ? _value.high
           : high // ignore: cast_nullable_to_non_nullable
-              as String,
-      low: null == low
+              as String?,
+      low: freezed == low
           ? _value.low
           : low // ignore: cast_nullable_to_non_nullable
-              as String,
-      volume: null == volume
+              as String?,
+      volume: freezed == volume
           ? _value.volume
           : volume // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -106,12 +106,12 @@ abstract class _$$TickerResultImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String ticker,
-      String open,
-      String close,
-      String high,
-      String low,
-      String volume});
+      {String? ticker,
+      String? open,
+      String? close,
+      String? high,
+      String? low,
+      String? volume});
 }
 
 /// @nodoc
@@ -125,38 +125,38 @@ class __$$TickerResultImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ticker = null,
-    Object? open = null,
-    Object? close = null,
-    Object? high = null,
-    Object? low = null,
-    Object? volume = null,
+    Object? ticker = freezed,
+    Object? open = freezed,
+    Object? close = freezed,
+    Object? high = freezed,
+    Object? low = freezed,
+    Object? volume = freezed,
   }) {
     return _then(_$TickerResultImpl(
-      ticker: null == ticker
+      ticker: freezed == ticker
           ? _value.ticker
           : ticker // ignore: cast_nullable_to_non_nullable
-              as String,
-      open: null == open
+              as String?,
+      open: freezed == open
           ? _value.open
           : open // ignore: cast_nullable_to_non_nullable
-              as String,
-      close: null == close
+              as String?,
+      close: freezed == close
           ? _value.close
           : close // ignore: cast_nullable_to_non_nullable
-              as String,
-      high: null == high
+              as String?,
+      high: freezed == high
           ? _value.high
           : high // ignore: cast_nullable_to_non_nullable
-              as String,
-      low: null == low
+              as String?,
+      low: freezed == low
           ? _value.low
           : low // ignore: cast_nullable_to_non_nullable
-              as String,
-      volume: null == volume
+              as String?,
+      volume: freezed == volume
           ? _value.volume
           : volume // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -165,29 +165,24 @@ class __$$TickerResultImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TickerResultImpl extends _TickerResult {
   const _$TickerResultImpl(
-      {required this.ticker,
-      required this.open,
-      required this.close,
-      required this.high,
-      required this.low,
-      required this.volume})
+      {this.ticker, this.open, this.close, this.high, this.low, this.volume})
       : super._();
 
   factory _$TickerResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$TickerResultImplFromJson(json);
 
   @override
-  final String ticker;
+  final String? ticker;
   @override
-  final String open;
+  final String? open;
   @override
-  final String close;
+  final String? close;
   @override
-  final String high;
+  final String? high;
   @override
-  final String low;
+  final String? low;
   @override
-  final String volume;
+  final String? volume;
 
   @override
   String toString() {
@@ -228,29 +223,29 @@ class _$TickerResultImpl extends _TickerResult {
 
 abstract class _TickerResult extends TickerResult {
   const factory _TickerResult(
-      {required final String ticker,
-      required final String open,
-      required final String close,
-      required final String high,
-      required final String low,
-      required final String volume}) = _$TickerResultImpl;
+      {final String? ticker,
+      final String? open,
+      final String? close,
+      final String? high,
+      final String? low,
+      final String? volume}) = _$TickerResultImpl;
   const _TickerResult._() : super._();
 
   factory _TickerResult.fromJson(Map<String, dynamic> json) =
       _$TickerResultImpl.fromJson;
 
   @override
-  String get ticker;
+  String? get ticker;
   @override
-  String get open;
+  String? get open;
   @override
-  String get close;
+  String? get close;
   @override
-  String get high;
+  String? get high;
   @override
-  String get low;
+  String? get low;
   @override
-  String get volume;
+  String? get volume;
   @override
   @JsonKey(ignore: true)
   _$$TickerResultImplCopyWith<_$TickerResultImpl> get copyWith =>
