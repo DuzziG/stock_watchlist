@@ -12,6 +12,7 @@ ThemeData getLightTheme() => ThemeData(
         background: Color(0xffefeeee),
         outline: Color(0xffffffff),
         outlineVariant: Color(0xffdbdada),
+        errorContainer: Color(0xFFf04a63),
       ),
       textTheme: textThemeLight,
       iconTheme: const IconThemeData(color: Color(0xff392f41)),
@@ -24,6 +25,7 @@ ThemeData getDarkTheme() => ThemeData(
         background: Color(0xff392f41),
         outline: Color(0xff4d4355),
         outlineVariant: Color(0xff251b2d),
+        errorContainer: Color(0xFFf04a63),
       ),
       // Text
       textTheme: textThemeDark,
