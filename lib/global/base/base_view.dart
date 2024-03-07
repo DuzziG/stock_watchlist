@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../global/di/navigation_providers.dart';
-import '../../home/home_view.dart';
+import '../../watchlist/watchlist_view.dart';
 import '../ext/context_extensions.dart';
 
 class BaseView extends ConsumerWidget {
@@ -26,7 +26,7 @@ class BaseView extends ConsumerWidget {
       },
     );
 
-    return const HomeView();
+    return const WatchlistView();
   }
 
   _push(BuildContext context, Widget view) => context.push(MaterialPageRoute(builder: (context) => view));
