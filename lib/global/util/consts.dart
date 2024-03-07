@@ -1,6 +1,6 @@
-const BASE_URL = '';
-const BASE_RUN_URL = '';
+// ignore_for_file: constant_identifier_names
 
-const KEY_AVATAR = 'avatar';
-const KEY_BASE_URL = 'baseUrl';
-const KEY_USER_ID = 'userId';
+const BASE_URL = 'https://www.alphavantage.co';
+
+const KEY_AUTHENTICATION = 'key_authentication';
+const KEY_THEME_MODE = 'theme_mode';
