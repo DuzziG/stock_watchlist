@@ -4,6 +4,7 @@ import 'package:stock_watchlist/global/ext/context_extensions.dart';
 import 'package:stock_watchlist/global/util/dimens.dart';
 import 'package:stock_watchlist/global/view/watchlist_tile.dart';
 import 'package:stock_watchlist/watchlist/add_ticker_dialog.dart';
+import 'package:stock_watchlist/watchlist/delete_dialog.dart';
 import 'package:stock_watchlist/watchlist/settings_sheet.dart';
 import 'package:stock_watchlist/watchlist/watchlist_controller.dart';
 
@@ -27,10 +28,16 @@ class WatchlistView extends ConsumerWidget {
               separatorBuilder: (context, index) => BOX_24,
               //TODO uncomment this line and delete the one bellow when i generate myTickersResults
               // itemCount: state.myTickersResults.length,
-              itemCount: state.myTickers.length,
+              itemCount: state.myTickersResults.length,
               itemBuilder: (context, index) => NeumorphicWrapper(
                 height: 80,
                 child: WatchlistTile(
+                  tickerKey: state.ticker,
+                  onTapDelete: () => showDialog(
+                    context: context,
+                    builder: (context) => const DeleteTickerDialog(),
+                  ),
+                  onTapRefresh: () => ref.controller().onEvent(RefreshSingle(state.ticker)),
                   leading: Text(
                     // TODO uncomment this line and delete the one bellow when i generate myTickersResults
                     state.myTickersResults[index]?.ticker ?? '',
@@ -55,41 +62,44 @@ class WatchlistView extends ConsumerWidget {
               ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              NeumorphicWrapper(
-                child: IconButton(
-                  icon: const Icon(Icons.refresh_outlined),
-                  onPressed: () => ref.controller().onEvent(const Refresh()),
-                ),
-              ),
-              NeumorphicWrapper(
-                height: 50,
-                width: 100,
-                child: IconButton(
-                  icon: Text(
-                    '+ Add',
-                    style: context.texts.labelLarge,
-                  ),
-                  onPressed: () => showDialog(
-                    context: context,
-                    builder: (context) => const AddTickerDialog(),
+          Padding(
+            padding: INSETS_16,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                NeumorphicWrapper(
+                  child: IconButton(
+                    icon: const Icon(Icons.refresh_outlined),
+                    onPressed: () => ref.controller().onEvent(const RefreshAll()),
                   ),
                 ),
-              ),
-              NeumorphicWrapper(
-                child: IconButton(
-                  icon: const Icon(Icons.settings_outlined),
-                  onPressed: () => showModalBottomSheet(
-                    context: context,
-                    builder: (_) => const SettingsSheet(),
-                    useSafeArea: true,
-                    showDragHandle: true,
+                NeumorphicWrapper(
+                  height: 50,
+                  width: 100,
+                  child: IconButton(
+                    icon: Text(
+                      '+ Add',
+                      style: context.texts.labelLarge,
+                    ),
+                    onPressed: () => showDialog(
+                      context: context,
+                      builder: (context) => const AddTickerDialog(),
+                    ),
                   ),
                 ),
-              ),
-            ],
+                NeumorphicWrapper(
+                  child: IconButton(
+                    icon: const Icon(Icons.settings_outlined),
+                    onPressed: () => showModalBottomSheet(
+                      context: context,
+                      builder: (_) => const SettingsSheet(),
+                      useSafeArea: true,
+                      showDragHandle: true,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
