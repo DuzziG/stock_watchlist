@@ -13,38 +13,55 @@ class AddTickerDialog extends ConsumerWidget {
   Widget build(context, ref) {
     final state = ref.watch(watchlistControllerProvider);
 
-    return Material(
-      color: context.colors.background,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          NeumorphicWrapper(
-            height: 60,
-            width: 100,
-            child: ReactiveTextField(
-              text: state.tempTicker,
-              textAlign: TextAlign.center,
-              autofocus: true,
-              autocorrect: true,
-              maxLines: 1,
-              minLines: 1,
-              textCapitalization: TextCapitalization.characters,
-              keyboardType: TextInputType.multiline,
-              onChange: (value) => ref.controller().onEvent(InputChanged(value)),
+    return Dialog(
+      backgroundColor: Colors.transparent,
+      child: IntrinsicHeight(
+        child: Container(
+          decoration: BoxDecoration(
+            color: context.colors.background,
+            borderRadius: BorderRadius.circular(DOUBLE_16),
+          ),
+          child: Padding(
+            padding: INSETS_32,
+            child: Column(
+              children: [
+                const Text('Add ticker'),
+                BOX_16,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    NeumorphicWrapper(
+                      height: 60,
+                      width: 100,
+                      child: ReactiveTextField(
+                        text: state.tempTicker ?? '',
+                        textAlign: TextAlign.center,
+                        autofocus: true,
+                        autocorrect: true,
+                        maxLines: 1,
+                        minLines: 1,
+                        textCapitalization: TextCapitalization.characters,
+                        keyboardType: TextInputType.multiline,
+                        onChange: (value) => ref.controller().onEvent(InputChanged(value)),
+                      ),
+                    ),
+                    BOX_16,
+                    NeumorphicWrapper(
+                      height: 50,
+                      child: IconButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(context.colors.background),
+                        ),
+                        icon: const Icon(Icons.send),
+                        onPressed: () => ref.controller().onEvent(Submit(state.tempTicker ?? '')),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
-          BOX_16,
-          NeumorphicWrapper(
-            height: 50,
-            child: IconButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(context.colors.background),
-              ),
-              icon: const Icon(Icons.send),
-              onPressed: () => ref.controller().onEvent(Submit(state.tempTicker)),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

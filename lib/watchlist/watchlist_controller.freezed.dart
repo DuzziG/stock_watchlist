@@ -194,7 +194,9 @@ mixin _$WatchlistEvent {
     required TResult Function(TickerData ticker) openTicker,
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
-    required TResult Function() refresh,
+    required TResult Function() refreshAll,
+    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) =>
       throw _privateConstructorUsedError;
@@ -203,7 +205,9 @@ mixin _$WatchlistEvent {
     TResult? Function(TickerData ticker)? openTicker,
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
-    TResult? Function()? refresh,
+    TResult? Function()? refreshAll,
+    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) =>
       throw _privateConstructorUsedError;
@@ -212,7 +216,9 @@ mixin _$WatchlistEvent {
     TResult Function(TickerData ticker)? openTicker,
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
-    TResult Function()? refresh,
+    TResult Function()? refreshAll,
+    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
   }) =>
@@ -222,7 +228,9 @@ mixin _$WatchlistEvent {
     required TResult Function(OpenTicker value) openTicker,
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(Submit value) submit,
-    required TResult Function(Refresh value) refresh,
+    required TResult Function(RefreshAll value) refreshAll,
+    required TResult Function(RefreshSingle value) refreshSingle,
+    required TResult Function(DeleteTicker value) deleteTicker,
     required TResult Function(DismissDialog value) dismissDialog,
   }) =>
       throw _privateConstructorUsedError;
@@ -231,7 +239,9 @@ mixin _$WatchlistEvent {
     TResult? Function(OpenTicker value)? openTicker,
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(Submit value)? submit,
-    TResult? Function(Refresh value)? refresh,
+    TResult? Function(RefreshAll value)? refreshAll,
+    TResult? Function(RefreshSingle value)? refreshSingle,
+    TResult? Function(DeleteTicker value)? deleteTicker,
     TResult? Function(DismissDialog value)? dismissDialog,
   }) =>
       throw _privateConstructorUsedError;
@@ -240,7 +250,9 @@ mixin _$WatchlistEvent {
     TResult Function(OpenTicker value)? openTicker,
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(Submit value)? submit,
-    TResult Function(Refresh value)? refresh,
+    TResult Function(RefreshAll value)? refreshAll,
+    TResult Function(RefreshSingle value)? refreshSingle,
+    TResult Function(DeleteTicker value)? deleteTicker,
     TResult Function(DismissDialog value)? dismissDialog,
     required TResult orElse(),
   }) =>
@@ -342,7 +354,9 @@ class _$OpenTickerImpl implements OpenTicker {
     required TResult Function(TickerData ticker) openTicker,
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
-    required TResult Function() refresh,
+    required TResult Function() refreshAll,
+    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
     return openTicker(ticker);
@@ -354,7 +368,9 @@ class _$OpenTickerImpl implements OpenTicker {
     TResult? Function(TickerData ticker)? openTicker,
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
-    TResult? Function()? refresh,
+    TResult? Function()? refreshAll,
+    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
     return openTicker?.call(ticker);
@@ -366,7 +382,9 @@ class _$OpenTickerImpl implements OpenTicker {
     TResult Function(TickerData ticker)? openTicker,
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
-    TResult Function()? refresh,
+    TResult Function()? refreshAll,
+    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
   }) {
@@ -382,7 +400,9 @@ class _$OpenTickerImpl implements OpenTicker {
     required TResult Function(OpenTicker value) openTicker,
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(Submit value) submit,
-    required TResult Function(Refresh value) refresh,
+    required TResult Function(RefreshAll value) refreshAll,
+    required TResult Function(RefreshSingle value) refreshSingle,
+    required TResult Function(DeleteTicker value) deleteTicker,
     required TResult Function(DismissDialog value) dismissDialog,
   }) {
     return openTicker(this);
@@ -394,7 +414,9 @@ class _$OpenTickerImpl implements OpenTicker {
     TResult? Function(OpenTicker value)? openTicker,
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(Submit value)? submit,
-    TResult? Function(Refresh value)? refresh,
+    TResult? Function(RefreshAll value)? refreshAll,
+    TResult? Function(RefreshSingle value)? refreshSingle,
+    TResult? Function(DeleteTicker value)? deleteTicker,
     TResult? Function(DismissDialog value)? dismissDialog,
   }) {
     return openTicker?.call(this);
@@ -406,7 +428,9 @@ class _$OpenTickerImpl implements OpenTicker {
     TResult Function(OpenTicker value)? openTicker,
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(Submit value)? submit,
-    TResult Function(Refresh value)? refresh,
+    TResult Function(RefreshAll value)? refreshAll,
+    TResult Function(RefreshSingle value)? refreshSingle,
+    TResult Function(DeleteTicker value)? deleteTicker,
     TResult Function(DismissDialog value)? dismissDialog,
     required TResult orElse(),
   }) {
@@ -493,7 +517,9 @@ class _$InputChangedImpl implements InputChanged {
     required TResult Function(TickerData ticker) openTicker,
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
-    required TResult Function() refresh,
+    required TResult Function() refreshAll,
+    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
     return inputChanged(value);
@@ -505,7 +531,9 @@ class _$InputChangedImpl implements InputChanged {
     TResult? Function(TickerData ticker)? openTicker,
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
-    TResult? Function()? refresh,
+    TResult? Function()? refreshAll,
+    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
     return inputChanged?.call(value);
@@ -517,7 +545,9 @@ class _$InputChangedImpl implements InputChanged {
     TResult Function(TickerData ticker)? openTicker,
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
-    TResult Function()? refresh,
+    TResult Function()? refreshAll,
+    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
   }) {
@@ -533,7 +563,9 @@ class _$InputChangedImpl implements InputChanged {
     required TResult Function(OpenTicker value) openTicker,
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(Submit value) submit,
-    required TResult Function(Refresh value) refresh,
+    required TResult Function(RefreshAll value) refreshAll,
+    required TResult Function(RefreshSingle value) refreshSingle,
+    required TResult Function(DeleteTicker value) deleteTicker,
     required TResult Function(DismissDialog value) dismissDialog,
   }) {
     return inputChanged(this);
@@ -545,7 +577,9 @@ class _$InputChangedImpl implements InputChanged {
     TResult? Function(OpenTicker value)? openTicker,
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(Submit value)? submit,
-    TResult? Function(Refresh value)? refresh,
+    TResult? Function(RefreshAll value)? refreshAll,
+    TResult? Function(RefreshSingle value)? refreshSingle,
+    TResult? Function(DeleteTicker value)? deleteTicker,
     TResult? Function(DismissDialog value)? dismissDialog,
   }) {
     return inputChanged?.call(this);
@@ -557,7 +591,9 @@ class _$InputChangedImpl implements InputChanged {
     TResult Function(OpenTicker value)? openTicker,
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(Submit value)? submit,
-    TResult Function(Refresh value)? refresh,
+    TResult Function(RefreshAll value)? refreshAll,
+    TResult Function(RefreshSingle value)? refreshSingle,
+    TResult Function(DeleteTicker value)? deleteTicker,
     TResult Function(DismissDialog value)? dismissDialog,
     required TResult orElse(),
   }) {
@@ -644,7 +680,9 @@ class _$SubmitImpl implements Submit {
     required TResult Function(TickerData ticker) openTicker,
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
-    required TResult Function() refresh,
+    required TResult Function() refreshAll,
+    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
     return submit(value);
@@ -656,7 +694,9 @@ class _$SubmitImpl implements Submit {
     TResult? Function(TickerData ticker)? openTicker,
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
-    TResult? Function()? refresh,
+    TResult? Function()? refreshAll,
+    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
     return submit?.call(value);
@@ -668,7 +708,9 @@ class _$SubmitImpl implements Submit {
     TResult Function(TickerData ticker)? openTicker,
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
-    TResult Function()? refresh,
+    TResult Function()? refreshAll,
+    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
   }) {
@@ -684,7 +726,9 @@ class _$SubmitImpl implements Submit {
     required TResult Function(OpenTicker value) openTicker,
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(Submit value) submit,
-    required TResult Function(Refresh value) refresh,
+    required TResult Function(RefreshAll value) refreshAll,
+    required TResult Function(RefreshSingle value) refreshSingle,
+    required TResult Function(DeleteTicker value) deleteTicker,
     required TResult Function(DismissDialog value) dismissDialog,
   }) {
     return submit(this);
@@ -696,7 +740,9 @@ class _$SubmitImpl implements Submit {
     TResult? Function(OpenTicker value)? openTicker,
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(Submit value)? submit,
-    TResult? Function(Refresh value)? refresh,
+    TResult? Function(RefreshAll value)? refreshAll,
+    TResult? Function(RefreshSingle value)? refreshSingle,
+    TResult? Function(DeleteTicker value)? deleteTicker,
     TResult? Function(DismissDialog value)? dismissDialog,
   }) {
     return submit?.call(this);
@@ -708,7 +754,9 @@ class _$SubmitImpl implements Submit {
     TResult Function(OpenTicker value)? openTicker,
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(Submit value)? submit,
-    TResult Function(Refresh value)? refresh,
+    TResult Function(RefreshAll value)? refreshAll,
+    TResult Function(RefreshSingle value)? refreshSingle,
+    TResult Function(DeleteTicker value)? deleteTicker,
     TResult Function(DismissDialog value)? dismissDialog,
     required TResult orElse(),
   }) {
@@ -729,35 +777,35 @@ abstract class Submit implements WatchlistEvent {
 }
 
 /// @nodoc
-abstract class _$$RefreshImplCopyWith<$Res> {
-  factory _$$RefreshImplCopyWith(
-          _$RefreshImpl value, $Res Function(_$RefreshImpl) then) =
-      __$$RefreshImplCopyWithImpl<$Res>;
+abstract class _$$RefreshAllImplCopyWith<$Res> {
+  factory _$$RefreshAllImplCopyWith(
+          _$RefreshAllImpl value, $Res Function(_$RefreshAllImpl) then) =
+      __$$RefreshAllImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$RefreshImplCopyWithImpl<$Res>
-    extends _$WatchlistEventCopyWithImpl<$Res, _$RefreshImpl>
-    implements _$$RefreshImplCopyWith<$Res> {
-  __$$RefreshImplCopyWithImpl(
-      _$RefreshImpl _value, $Res Function(_$RefreshImpl) _then)
+class __$$RefreshAllImplCopyWithImpl<$Res>
+    extends _$WatchlistEventCopyWithImpl<$Res, _$RefreshAllImpl>
+    implements _$$RefreshAllImplCopyWith<$Res> {
+  __$$RefreshAllImplCopyWithImpl(
+      _$RefreshAllImpl _value, $Res Function(_$RefreshAllImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$RefreshImpl implements Refresh {
-  const _$RefreshImpl();
+class _$RefreshAllImpl implements RefreshAll {
+  const _$RefreshAllImpl();
 
   @override
   String toString() {
-    return 'WatchlistEvent.refresh()';
+    return 'WatchlistEvent.refreshAll()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$RefreshImpl);
+        (other.runtimeType == runtimeType && other is _$RefreshAllImpl);
   }
 
   @override
@@ -769,10 +817,12 @@ class _$RefreshImpl implements Refresh {
     required TResult Function(TickerData ticker) openTicker,
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
-    required TResult Function() refresh,
+    required TResult Function() refreshAll,
+    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
-    return refresh();
+    return refreshAll();
   }
 
   @override
@@ -781,10 +831,12 @@ class _$RefreshImpl implements Refresh {
     TResult? Function(TickerData ticker)? openTicker,
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
-    TResult? Function()? refresh,
+    TResult? Function()? refreshAll,
+    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
-    return refresh?.call();
+    return refreshAll?.call();
   }
 
   @override
@@ -793,12 +845,14 @@ class _$RefreshImpl implements Refresh {
     TResult Function(TickerData ticker)? openTicker,
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
-    TResult Function()? refresh,
+    TResult Function()? refreshAll,
+    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
   }) {
-    if (refresh != null) {
-      return refresh();
+    if (refreshAll != null) {
+      return refreshAll();
     }
     return orElse();
   }
@@ -809,10 +863,12 @@ class _$RefreshImpl implements Refresh {
     required TResult Function(OpenTicker value) openTicker,
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(Submit value) submit,
-    required TResult Function(Refresh value) refresh,
+    required TResult Function(RefreshAll value) refreshAll,
+    required TResult Function(RefreshSingle value) refreshSingle,
+    required TResult Function(DeleteTicker value) deleteTicker,
     required TResult Function(DismissDialog value) dismissDialog,
   }) {
-    return refresh(this);
+    return refreshAll(this);
   }
 
   @override
@@ -821,10 +877,12 @@ class _$RefreshImpl implements Refresh {
     TResult? Function(OpenTicker value)? openTicker,
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(Submit value)? submit,
-    TResult? Function(Refresh value)? refresh,
+    TResult? Function(RefreshAll value)? refreshAll,
+    TResult? Function(RefreshSingle value)? refreshSingle,
+    TResult? Function(DeleteTicker value)? deleteTicker,
     TResult? Function(DismissDialog value)? dismissDialog,
   }) {
-    return refresh?.call(this);
+    return refreshAll?.call(this);
   }
 
   @override
@@ -833,19 +891,347 @@ class _$RefreshImpl implements Refresh {
     TResult Function(OpenTicker value)? openTicker,
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(Submit value)? submit,
-    TResult Function(Refresh value)? refresh,
+    TResult Function(RefreshAll value)? refreshAll,
+    TResult Function(RefreshSingle value)? refreshSingle,
+    TResult Function(DeleteTicker value)? deleteTicker,
     TResult Function(DismissDialog value)? dismissDialog,
     required TResult orElse(),
   }) {
-    if (refresh != null) {
-      return refresh(this);
+    if (refreshAll != null) {
+      return refreshAll(this);
     }
     return orElse();
   }
 }
 
-abstract class Refresh implements WatchlistEvent {
-  const factory Refresh() = _$RefreshImpl;
+abstract class RefreshAll implements WatchlistEvent {
+  const factory RefreshAll() = _$RefreshAllImpl;
+}
+
+/// @nodoc
+abstract class _$$RefreshSingleImplCopyWith<$Res> {
+  factory _$$RefreshSingleImplCopyWith(
+          _$RefreshSingleImpl value, $Res Function(_$RefreshSingleImpl) then) =
+      __$$RefreshSingleImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String ticker});
+}
+
+/// @nodoc
+class __$$RefreshSingleImplCopyWithImpl<$Res>
+    extends _$WatchlistEventCopyWithImpl<$Res, _$RefreshSingleImpl>
+    implements _$$RefreshSingleImplCopyWith<$Res> {
+  __$$RefreshSingleImplCopyWithImpl(
+      _$RefreshSingleImpl _value, $Res Function(_$RefreshSingleImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ticker = null,
+  }) {
+    return _then(_$RefreshSingleImpl(
+      null == ticker
+          ? _value.ticker
+          : ticker // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RefreshSingleImpl implements RefreshSingle {
+  const _$RefreshSingleImpl(this.ticker);
+
+  @override
+  final String ticker;
+
+  @override
+  String toString() {
+    return 'WatchlistEvent.refreshSingle(ticker: $ticker)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RefreshSingleImpl &&
+            (identical(other.ticker, ticker) || other.ticker == ticker));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, ticker);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RefreshSingleImplCopyWith<_$RefreshSingleImpl> get copyWith =>
+      __$$RefreshSingleImplCopyWithImpl<_$RefreshSingleImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(TickerData ticker) openTicker,
+    required TResult Function(String value) inputChanged,
+    required TResult Function(String value) submit,
+    required TResult Function() refreshAll,
+    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String ticker) deleteTicker,
+    required TResult Function() dismissDialog,
+  }) {
+    return refreshSingle(ticker);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(TickerData ticker)? openTicker,
+    TResult? Function(String value)? inputChanged,
+    TResult? Function(String value)? submit,
+    TResult? Function()? refreshAll,
+    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String ticker)? deleteTicker,
+    TResult? Function()? dismissDialog,
+  }) {
+    return refreshSingle?.call(ticker);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(TickerData ticker)? openTicker,
+    TResult Function(String value)? inputChanged,
+    TResult Function(String value)? submit,
+    TResult Function()? refreshAll,
+    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String ticker)? deleteTicker,
+    TResult Function()? dismissDialog,
+    required TResult orElse(),
+  }) {
+    if (refreshSingle != null) {
+      return refreshSingle(ticker);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenTicker value) openTicker,
+    required TResult Function(InputChanged value) inputChanged,
+    required TResult Function(Submit value) submit,
+    required TResult Function(RefreshAll value) refreshAll,
+    required TResult Function(RefreshSingle value) refreshSingle,
+    required TResult Function(DeleteTicker value) deleteTicker,
+    required TResult Function(DismissDialog value) dismissDialog,
+  }) {
+    return refreshSingle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OpenTicker value)? openTicker,
+    TResult? Function(InputChanged value)? inputChanged,
+    TResult? Function(Submit value)? submit,
+    TResult? Function(RefreshAll value)? refreshAll,
+    TResult? Function(RefreshSingle value)? refreshSingle,
+    TResult? Function(DeleteTicker value)? deleteTicker,
+    TResult? Function(DismissDialog value)? dismissDialog,
+  }) {
+    return refreshSingle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenTicker value)? openTicker,
+    TResult Function(InputChanged value)? inputChanged,
+    TResult Function(Submit value)? submit,
+    TResult Function(RefreshAll value)? refreshAll,
+    TResult Function(RefreshSingle value)? refreshSingle,
+    TResult Function(DeleteTicker value)? deleteTicker,
+    TResult Function(DismissDialog value)? dismissDialog,
+    required TResult orElse(),
+  }) {
+    if (refreshSingle != null) {
+      return refreshSingle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefreshSingle implements WatchlistEvent {
+  const factory RefreshSingle(final String ticker) = _$RefreshSingleImpl;
+
+  String get ticker;
+  @JsonKey(ignore: true)
+  _$$RefreshSingleImplCopyWith<_$RefreshSingleImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteTickerImplCopyWith<$Res> {
+  factory _$$DeleteTickerImplCopyWith(
+          _$DeleteTickerImpl value, $Res Function(_$DeleteTickerImpl) then) =
+      __$$DeleteTickerImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String ticker});
+}
+
+/// @nodoc
+class __$$DeleteTickerImplCopyWithImpl<$Res>
+    extends _$WatchlistEventCopyWithImpl<$Res, _$DeleteTickerImpl>
+    implements _$$DeleteTickerImplCopyWith<$Res> {
+  __$$DeleteTickerImplCopyWithImpl(
+      _$DeleteTickerImpl _value, $Res Function(_$DeleteTickerImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ticker = null,
+  }) {
+    return _then(_$DeleteTickerImpl(
+      null == ticker
+          ? _value.ticker
+          : ticker // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteTickerImpl implements DeleteTicker {
+  const _$DeleteTickerImpl(this.ticker);
+
+  @override
+  final String ticker;
+
+  @override
+  String toString() {
+    return 'WatchlistEvent.deleteTicker(ticker: $ticker)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteTickerImpl &&
+            (identical(other.ticker, ticker) || other.ticker == ticker));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, ticker);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteTickerImplCopyWith<_$DeleteTickerImpl> get copyWith =>
+      __$$DeleteTickerImplCopyWithImpl<_$DeleteTickerImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(TickerData ticker) openTicker,
+    required TResult Function(String value) inputChanged,
+    required TResult Function(String value) submit,
+    required TResult Function() refreshAll,
+    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String ticker) deleteTicker,
+    required TResult Function() dismissDialog,
+  }) {
+    return deleteTicker(ticker);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(TickerData ticker)? openTicker,
+    TResult? Function(String value)? inputChanged,
+    TResult? Function(String value)? submit,
+    TResult? Function()? refreshAll,
+    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String ticker)? deleteTicker,
+    TResult? Function()? dismissDialog,
+  }) {
+    return deleteTicker?.call(ticker);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(TickerData ticker)? openTicker,
+    TResult Function(String value)? inputChanged,
+    TResult Function(String value)? submit,
+    TResult Function()? refreshAll,
+    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String ticker)? deleteTicker,
+    TResult Function()? dismissDialog,
+    required TResult orElse(),
+  }) {
+    if (deleteTicker != null) {
+      return deleteTicker(ticker);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(OpenTicker value) openTicker,
+    required TResult Function(InputChanged value) inputChanged,
+    required TResult Function(Submit value) submit,
+    required TResult Function(RefreshAll value) refreshAll,
+    required TResult Function(RefreshSingle value) refreshSingle,
+    required TResult Function(DeleteTicker value) deleteTicker,
+    required TResult Function(DismissDialog value) dismissDialog,
+  }) {
+    return deleteTicker(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(OpenTicker value)? openTicker,
+    TResult? Function(InputChanged value)? inputChanged,
+    TResult? Function(Submit value)? submit,
+    TResult? Function(RefreshAll value)? refreshAll,
+    TResult? Function(RefreshSingle value)? refreshSingle,
+    TResult? Function(DeleteTicker value)? deleteTicker,
+    TResult? Function(DismissDialog value)? dismissDialog,
+  }) {
+    return deleteTicker?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(OpenTicker value)? openTicker,
+    TResult Function(InputChanged value)? inputChanged,
+    TResult Function(Submit value)? submit,
+    TResult Function(RefreshAll value)? refreshAll,
+    TResult Function(RefreshSingle value)? refreshSingle,
+    TResult Function(DeleteTicker value)? deleteTicker,
+    TResult Function(DismissDialog value)? dismissDialog,
+    required TResult orElse(),
+  }) {
+    if (deleteTicker != null) {
+      return deleteTicker(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteTicker implements WatchlistEvent {
+  const factory DeleteTicker(final String ticker) = _$DeleteTickerImpl;
+
+  String get ticker;
+  @JsonKey(ignore: true)
+  _$$DeleteTickerImplCopyWith<_$DeleteTickerImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -889,7 +1275,9 @@ class _$DismissDialogImpl implements DismissDialog {
     required TResult Function(TickerData ticker) openTicker,
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
-    required TResult Function() refresh,
+    required TResult Function() refreshAll,
+    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
     return dismissDialog();
@@ -901,7 +1289,9 @@ class _$DismissDialogImpl implements DismissDialog {
     TResult? Function(TickerData ticker)? openTicker,
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
-    TResult? Function()? refresh,
+    TResult? Function()? refreshAll,
+    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
     return dismissDialog?.call();
@@ -913,7 +1303,9 @@ class _$DismissDialogImpl implements DismissDialog {
     TResult Function(TickerData ticker)? openTicker,
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
-    TResult Function()? refresh,
+    TResult Function()? refreshAll,
+    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
   }) {
@@ -929,7 +1321,9 @@ class _$DismissDialogImpl implements DismissDialog {
     required TResult Function(OpenTicker value) openTicker,
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(Submit value) submit,
-    required TResult Function(Refresh value) refresh,
+    required TResult Function(RefreshAll value) refreshAll,
+    required TResult Function(RefreshSingle value) refreshSingle,
+    required TResult Function(DeleteTicker value) deleteTicker,
     required TResult Function(DismissDialog value) dismissDialog,
   }) {
     return dismissDialog(this);
@@ -941,7 +1335,9 @@ class _$DismissDialogImpl implements DismissDialog {
     TResult? Function(OpenTicker value)? openTicker,
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(Submit value)? submit,
-    TResult? Function(Refresh value)? refresh,
+    TResult? Function(RefreshAll value)? refreshAll,
+    TResult? Function(RefreshSingle value)? refreshSingle,
+    TResult? Function(DeleteTicker value)? deleteTicker,
     TResult? Function(DismissDialog value)? dismissDialog,
   }) {
     return dismissDialog?.call(this);
@@ -953,7 +1349,9 @@ class _$DismissDialogImpl implements DismissDialog {
     TResult Function(OpenTicker value)? openTicker,
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(Submit value)? submit,
-    TResult Function(Refresh value)? refresh,
+    TResult Function(RefreshAll value)? refreshAll,
+    TResult Function(RefreshSingle value)? refreshSingle,
+    TResult Function(DeleteTicker value)? deleteTicker,
     TResult Function(DismissDialog value)? dismissDialog,
     required TResult orElse(),
   }) {
@@ -971,9 +1369,8 @@ abstract class DismissDialog implements WatchlistEvent {
 /// @nodoc
 mixin _$WatchlistState {
   String get ticker => throw _privateConstructorUsedError;
-  String get tempTicker => throw _privateConstructorUsedError;
+  String? get tempTicker => throw _privateConstructorUsedError;
   List<String> get myTickers => throw _privateConstructorUsedError;
-  TickerResult? get tickerResult => throw _privateConstructorUsedError;
   List<TickerResult?> get myTickersResults =>
       throw _privateConstructorUsedError;
 
@@ -990,12 +1387,9 @@ abstract class $WatchlistStateCopyWith<$Res> {
   @useResult
   $Res call(
       {String ticker,
-      String tempTicker,
+      String? tempTicker,
       List<String> myTickers,
-      TickerResult? tickerResult,
       List<TickerResult?> myTickersResults});
-
-  $TickerResultCopyWith<$Res>? get tickerResult;
 }
 
 /// @nodoc
@@ -1012,9 +1406,8 @@ class _$WatchlistStateCopyWithImpl<$Res, $Val extends WatchlistState>
   @override
   $Res call({
     Object? ticker = null,
-    Object? tempTicker = null,
+    Object? tempTicker = freezed,
     Object? myTickers = null,
-    Object? tickerResult = freezed,
     Object? myTickersResults = null,
   }) {
     return _then(_value.copyWith(
@@ -1022,35 +1415,19 @@ class _$WatchlistStateCopyWithImpl<$Res, $Val extends WatchlistState>
           ? _value.ticker
           : ticker // ignore: cast_nullable_to_non_nullable
               as String,
-      tempTicker: null == tempTicker
+      tempTicker: freezed == tempTicker
           ? _value.tempTicker
           : tempTicker // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       myTickers: null == myTickers
           ? _value.myTickers
           : myTickers // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      tickerResult: freezed == tickerResult
-          ? _value.tickerResult
-          : tickerResult // ignore: cast_nullable_to_non_nullable
-              as TickerResult?,
       myTickersResults: null == myTickersResults
           ? _value.myTickersResults
           : myTickersResults // ignore: cast_nullable_to_non_nullable
               as List<TickerResult?>,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TickerResultCopyWith<$Res>? get tickerResult {
-    if (_value.tickerResult == null) {
-      return null;
-    }
-
-    return $TickerResultCopyWith<$Res>(_value.tickerResult!, (value) {
-      return _then(_value.copyWith(tickerResult: value) as $Val);
-    });
   }
 }
 
@@ -1064,13 +1441,9 @@ abstract class _$$WatchlistStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {String ticker,
-      String tempTicker,
+      String? tempTicker,
       List<String> myTickers,
-      TickerResult? tickerResult,
       List<TickerResult?> myTickersResults});
-
-  @override
-  $TickerResultCopyWith<$Res>? get tickerResult;
 }
 
 /// @nodoc
@@ -1085,9 +1458,8 @@ class __$$WatchlistStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? ticker = null,
-    Object? tempTicker = null,
+    Object? tempTicker = freezed,
     Object? myTickers = null,
-    Object? tickerResult = freezed,
     Object? myTickersResults = null,
   }) {
     return _then(_$WatchlistStateImpl(
@@ -1095,18 +1467,14 @@ class __$$WatchlistStateImplCopyWithImpl<$Res>
           ? _value.ticker
           : ticker // ignore: cast_nullable_to_non_nullable
               as String,
-      tempTicker: null == tempTicker
+      tempTicker: freezed == tempTicker
           ? _value.tempTicker
           : tempTicker // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       myTickers: null == myTickers
           ? _value._myTickers
           : myTickers // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      tickerResult: freezed == tickerResult
-          ? _value.tickerResult
-          : tickerResult // ignore: cast_nullable_to_non_nullable
-              as TickerResult?,
       myTickersResults: null == myTickersResults
           ? _value._myTickersResults
           : myTickersResults // ignore: cast_nullable_to_non_nullable
@@ -1120,9 +1488,8 @@ class __$$WatchlistStateImplCopyWithImpl<$Res>
 class _$WatchlistStateImpl implements _WatchlistState {
   const _$WatchlistStateImpl(
       {required this.ticker,
-      required this.tempTicker,
+      this.tempTicker,
       required final List<String> myTickers,
-      required this.tickerResult,
       required final List<TickerResult?> myTickersResults})
       : _myTickers = myTickers,
         _myTickersResults = myTickersResults;
@@ -1130,7 +1497,7 @@ class _$WatchlistStateImpl implements _WatchlistState {
   @override
   final String ticker;
   @override
-  final String tempTicker;
+  final String? tempTicker;
   final List<String> _myTickers;
   @override
   List<String> get myTickers {
@@ -1139,8 +1506,6 @@ class _$WatchlistStateImpl implements _WatchlistState {
     return EqualUnmodifiableListView(_myTickers);
   }
 
-  @override
-  final TickerResult? tickerResult;
   final List<TickerResult?> _myTickersResults;
   @override
   List<TickerResult?> get myTickersResults {
@@ -1152,7 +1517,7 @@ class _$WatchlistStateImpl implements _WatchlistState {
 
   @override
   String toString() {
-    return 'WatchlistState(ticker: $ticker, tempTicker: $tempTicker, myTickers: $myTickers, tickerResult: $tickerResult, myTickersResults: $myTickersResults)';
+    return 'WatchlistState(ticker: $ticker, tempTicker: $tempTicker, myTickers: $myTickers, myTickersResults: $myTickersResults)';
   }
 
   @override
@@ -1165,8 +1530,6 @@ class _$WatchlistStateImpl implements _WatchlistState {
                 other.tempTicker == tempTicker) &&
             const DeepCollectionEquality()
                 .equals(other._myTickers, _myTickers) &&
-            (identical(other.tickerResult, tickerResult) ||
-                other.tickerResult == tickerResult) &&
             const DeepCollectionEquality()
                 .equals(other._myTickersResults, _myTickersResults));
   }
@@ -1177,7 +1540,6 @@ class _$WatchlistStateImpl implements _WatchlistState {
       ticker,
       tempTicker,
       const DeepCollectionEquality().hash(_myTickers),
-      tickerResult,
       const DeepCollectionEquality().hash(_myTickersResults));
 
   @JsonKey(ignore: true)
@@ -1191,20 +1553,17 @@ class _$WatchlistStateImpl implements _WatchlistState {
 abstract class _WatchlistState implements WatchlistState {
   const factory _WatchlistState(
           {required final String ticker,
-          required final String tempTicker,
+          final String? tempTicker,
           required final List<String> myTickers,
-          required final TickerResult? tickerResult,
           required final List<TickerResult?> myTickersResults}) =
       _$WatchlistStateImpl;
 
   @override
   String get ticker;
   @override
-  String get tempTicker;
+  String? get tempTicker;
   @override
   List<String> get myTickers;
-  @override
-  TickerResult? get tickerResult;
   @override
   List<TickerResult?> get myTickersResults;
   @override

@@ -37,6 +37,7 @@ class WatchlistCard extends StatelessWidget {
     this.onLongPress,
     this.border,
     this.boxShadow,
+    required this.tickerKey,
     super.key,
   });
 
@@ -49,6 +50,7 @@ class WatchlistCard extends StatelessWidget {
   final Function? onLongPress;
   final BoxBorder? border;
   final List<BoxShadow>? boxShadow;
+  final String tickerKey;
 
   @override
   Widget build(context) => Padding(
@@ -80,6 +82,7 @@ class WatchlistCard extends StatelessWidget {
                         ),
                       ),
                     WatchlistTile(
+                      tickerKey: tickerKey,
                       leading: title?.leading,
                       title: title?.text != null ? Text(title?.text ?? '') : null,
                       subtitle: title?.subtext != null
