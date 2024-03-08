@@ -16,4 +16,4 @@ LocalRepository localRepository(LocalRepositoryRef ref) => StoreLocalRepository(
 Localstore localStore(LocalStoreRef ref) => Localstore.instance;
 
 @Riverpod(keepAlive: true)
-Future<SharedPreferences> sharedPreferences(SharedPreferencesRef ref) async => await SharedPreferences.getInstance();
+Future<SharedPreferences> sharedPreferences(SharedPreferencesRef ref) => SharedPreferences.getInstance();

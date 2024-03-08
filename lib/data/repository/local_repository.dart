@@ -10,6 +10,10 @@ abstract class LocalRepository {
   Future<void> setThemeMode(ThemeMode themeMode);
 
   ThemeMode getThemeMode();
+
+  Future<void> setTickers(List<String> tickers);
+
+  Future<List<String>> getTickers();
 }
 
 class StoreLocalRepository extends LocalRepository {
@@ -28,5 +32,19 @@ class StoreLocalRepository extends LocalRepository {
   ThemeMode getThemeMode() {
     final themeIndex = sharedPreferences?.getInt(KEY_THEME_MODE);
     return themeIndex == null ? ThemeMode.system : ThemeMode.values[themeIndex];
+  }
+
+  @override
+  Future<void> setTickers(List<String> tickers) async {
+    final shared = await SharedPreferences.getInstance();
+    await shared.setStringList('tickers', tickers);
+  }
+
+  @override
+  Future<List<String>> getTickers() async {
+    final shared = await SharedPreferences.getInstance();
+    final List<String>? tickers = shared.getStringList('tickers');
+    print('ASD tickers $tickers');
+    return tickers ?? [];
   }
 }

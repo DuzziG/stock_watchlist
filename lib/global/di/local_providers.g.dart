@@ -35,7 +35,7 @@ final localStoreProvider = Provider<Localstore>.internal(
 );
 
 typedef LocalStoreRef = ProviderRef<Localstore>;
-String _$sharedPreferencesHash() => r'd4a86b51e5d183ecf4e851ebe080bd82a477d2a3';
+String _$sharedPreferencesHash() => r'25eceea0052302f519f44a896409ba30ede45562';
 
 /// See also [sharedPreferences].
 @ProviderFor(sharedPreferences)
