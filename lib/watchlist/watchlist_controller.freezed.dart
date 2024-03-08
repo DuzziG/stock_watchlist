@@ -195,7 +195,7 @@ mixin _$WatchlistEvent {
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
     required TResult Function() refreshAll,
-    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String? ticker) refreshSingle,
     required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) =>
@@ -206,7 +206,7 @@ mixin _$WatchlistEvent {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
     TResult? Function()? refreshAll,
-    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String? ticker)? refreshSingle,
     TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) =>
@@ -217,7 +217,7 @@ mixin _$WatchlistEvent {
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
     TResult Function()? refreshAll,
-    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String? ticker)? refreshSingle,
     TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
@@ -355,7 +355,7 @@ class _$OpenTickerImpl implements OpenTicker {
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
     required TResult Function() refreshAll,
-    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String? ticker) refreshSingle,
     required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
@@ -369,7 +369,7 @@ class _$OpenTickerImpl implements OpenTicker {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
     TResult? Function()? refreshAll,
-    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String? ticker)? refreshSingle,
     TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
@@ -383,7 +383,7 @@ class _$OpenTickerImpl implements OpenTicker {
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
     TResult Function()? refreshAll,
-    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String? ticker)? refreshSingle,
     TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
@@ -518,7 +518,7 @@ class _$InputChangedImpl implements InputChanged {
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
     required TResult Function() refreshAll,
-    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String? ticker) refreshSingle,
     required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
@@ -532,7 +532,7 @@ class _$InputChangedImpl implements InputChanged {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
     TResult? Function()? refreshAll,
-    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String? ticker)? refreshSingle,
     TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
@@ -546,7 +546,7 @@ class _$InputChangedImpl implements InputChanged {
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
     TResult Function()? refreshAll,
-    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String? ticker)? refreshSingle,
     TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
@@ -681,7 +681,7 @@ class _$SubmitImpl implements Submit {
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
     required TResult Function() refreshAll,
-    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String? ticker) refreshSingle,
     required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
@@ -695,7 +695,7 @@ class _$SubmitImpl implements Submit {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
     TResult? Function()? refreshAll,
-    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String? ticker)? refreshSingle,
     TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
@@ -709,7 +709,7 @@ class _$SubmitImpl implements Submit {
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
     TResult Function()? refreshAll,
-    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String? ticker)? refreshSingle,
     TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
@@ -818,7 +818,7 @@ class _$RefreshAllImpl implements RefreshAll {
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
     required TResult Function() refreshAll,
-    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String? ticker) refreshSingle,
     required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
@@ -832,7 +832,7 @@ class _$RefreshAllImpl implements RefreshAll {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
     TResult? Function()? refreshAll,
-    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String? ticker)? refreshSingle,
     TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
@@ -846,7 +846,7 @@ class _$RefreshAllImpl implements RefreshAll {
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
     TResult Function()? refreshAll,
-    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String? ticker)? refreshSingle,
     TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
@@ -914,7 +914,7 @@ abstract class _$$RefreshSingleImplCopyWith<$Res> {
           _$RefreshSingleImpl value, $Res Function(_$RefreshSingleImpl) then) =
       __$$RefreshSingleImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String ticker});
+  $Res call({String? ticker});
 }
 
 /// @nodoc
@@ -928,13 +928,13 @@ class __$$RefreshSingleImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ticker = null,
+    Object? ticker = freezed,
   }) {
     return _then(_$RefreshSingleImpl(
-      null == ticker
+      freezed == ticker
           ? _value.ticker
           : ticker // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -945,7 +945,7 @@ class _$RefreshSingleImpl implements RefreshSingle {
   const _$RefreshSingleImpl(this.ticker);
 
   @override
-  final String ticker;
+  final String? ticker;
 
   @override
   String toString() {
@@ -976,7 +976,7 @@ class _$RefreshSingleImpl implements RefreshSingle {
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
     required TResult Function() refreshAll,
-    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String? ticker) refreshSingle,
     required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
@@ -990,7 +990,7 @@ class _$RefreshSingleImpl implements RefreshSingle {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
     TResult? Function()? refreshAll,
-    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String? ticker)? refreshSingle,
     TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
@@ -1004,7 +1004,7 @@ class _$RefreshSingleImpl implements RefreshSingle {
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
     TResult Function()? refreshAll,
-    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String? ticker)? refreshSingle,
     TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
@@ -1063,9 +1063,9 @@ class _$RefreshSingleImpl implements RefreshSingle {
 }
 
 abstract class RefreshSingle implements WatchlistEvent {
-  const factory RefreshSingle(final String ticker) = _$RefreshSingleImpl;
+  const factory RefreshSingle(final String? ticker) = _$RefreshSingleImpl;
 
-  String get ticker;
+  String? get ticker;
   @JsonKey(ignore: true)
   _$$RefreshSingleImplCopyWith<_$RefreshSingleImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1139,7 +1139,7 @@ class _$DeleteTickerImpl implements DeleteTicker {
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
     required TResult Function() refreshAll,
-    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String? ticker) refreshSingle,
     required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
@@ -1153,7 +1153,7 @@ class _$DeleteTickerImpl implements DeleteTicker {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
     TResult? Function()? refreshAll,
-    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String? ticker)? refreshSingle,
     TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
@@ -1167,7 +1167,7 @@ class _$DeleteTickerImpl implements DeleteTicker {
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
     TResult Function()? refreshAll,
-    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String? ticker)? refreshSingle,
     TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),
@@ -1276,7 +1276,7 @@ class _$DismissDialogImpl implements DismissDialog {
     required TResult Function(String value) inputChanged,
     required TResult Function(String value) submit,
     required TResult Function() refreshAll,
-    required TResult Function(String ticker) refreshSingle,
+    required TResult Function(String? ticker) refreshSingle,
     required TResult Function(String ticker) deleteTicker,
     required TResult Function() dismissDialog,
   }) {
@@ -1290,7 +1290,7 @@ class _$DismissDialogImpl implements DismissDialog {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String value)? submit,
     TResult? Function()? refreshAll,
-    TResult? Function(String ticker)? refreshSingle,
+    TResult? Function(String? ticker)? refreshSingle,
     TResult? Function(String ticker)? deleteTicker,
     TResult? Function()? dismissDialog,
   }) {
@@ -1304,7 +1304,7 @@ class _$DismissDialogImpl implements DismissDialog {
     TResult Function(String value)? inputChanged,
     TResult Function(String value)? submit,
     TResult Function()? refreshAll,
-    TResult Function(String ticker)? refreshSingle,
+    TResult Function(String? ticker)? refreshSingle,
     TResult Function(String ticker)? deleteTicker,
     TResult Function()? dismissDialog,
     required TResult orElse(),

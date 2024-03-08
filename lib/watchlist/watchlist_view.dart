@@ -27,37 +27,38 @@ class WatchlistView extends ConsumerWidget {
               padding: INSETS_16,
               separatorBuilder: (context, index) => BOX_24,
               itemCount: state.myTickersResults.length,
-              itemBuilder: (context, index) => NeumorphicWrapper(
-                height: 80,
-                child: WatchlistTile(
-                  tickerKey: state.ticker,
-                  onTapDelete: () => showDialog(
-                    context: context,
-                    builder: (context) => const DeleteTickerDialog(),
+              itemBuilder: (context, index) {
+                final item = state.myTickersResults[index];
+                return NeumorphicWrapper(
+                  height: DOUBLE_80,
+                  child: WatchlistTile(
+                    tickerKey: item?.ticker ?? '',
+                    onTapDelete: () => showDialog(
+                      context: context,
+                      builder: (context) => DeleteTickerDialog(item?.ticker),
+                    ),
+                    onTapRefresh: () => ref.controller().onEvent(RefreshSingle(item?.ticker)),
+                    leading: Text(
+                      item?.ticker ?? '',
+                      style: context.texts.headlineSmall,
+                    ),
+                    title: Text(
+                      'Volume: ${item?.volume}',
+                    ),
+                    subtitle: Row(
+                      children: [
+                        Text(
+                          'open: ${item?.open}',
+                        ),
+                        BOX_4,
+                        Text(
+                          'close: ${item?.close}',
+                        ),
+                      ],
+                    ),
                   ),
-                  onTapRefresh: () => ref.controller().onEvent(RefreshSingle(state.ticker)),
-                  leading: Text(
-                    // TODO uncomment this line and delete the one bellow when i generate myTickersResults
-                    state.myTickersResults[index]?.ticker ?? '',
-                    // state.myTickers[index],
-                    style: context.texts.headlineSmall,
-                  ),
-                  title: Text(
-                    'Volume: ${state.myTickersResults[index]?.volume}',
-                  ),
-                  subtitle: Row(
-                    children: [
-                      Text(
-                        'open: ${state.myTickersResults[index]?.open}',
-                      ),
-                      BOX_4,
-                      Text(
-                        'close: ${state.myTickersResults[index]?.close}',
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+                );
+              },
             ),
           ),
           Padding(

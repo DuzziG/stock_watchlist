@@ -29,7 +29,7 @@ sealed class WatchlistEvent with _$WatchlistEvent {
 
   const factory WatchlistEvent.refreshAll() = RefreshAll;
 
-  const factory WatchlistEvent.refreshSingle(String ticker) = RefreshSingle;
+  const factory WatchlistEvent.refreshSingle(String? ticker) = RefreshSingle;
 
   const factory WatchlistEvent.deleteTicker(String ticker) = DeleteTicker;
 
@@ -76,18 +76,18 @@ class WatchlistController extends _$WatchlistController {
 
   _onSubmit(String value) async {
     final tempListBefore = await ref.read(localRepositoryProvider).getTickers();
-    final tempList = tempListBefore.toSet().toList(growable: true);
+    final tempList = tempListBefore.toList(growable: true);
     print('ASD $tempList');
     final myTickers = tempList..add(value);
-    ref.read(localRepositoryProvider).setTickers(myTickers);
+    ref.read(localRepositoryProvider).setTickers(myTickers.toSet().toList());
 
     state = state.copyWith(myTickers: myTickers);
 
     final response = await ref.read(tickerDataRepositoryProvider).generateTickerData(value);
 
-    final tempMyTickerResults = state.myTickersResults.toSet().toList(growable: true);
+    final tempMyTickerResults = state.myTickersResults.toList(growable: true);
     final myTickerResults = tempMyTickerResults..add(response);
-    state = state.copyWith(myTickersResults: myTickerResults, tempTicker: '');
+    state = state.copyWith(myTickersResults: myTickerResults.toSet().toList(), tempTicker: '');
 
     ref.navigate(const Back());
   }
@@ -101,15 +101,32 @@ class WatchlistController extends _$WatchlistController {
     state = state.copyWith(myTickersResults: myTickerResults);
   }
 
-  _onRefreshSingle(ticker) async {
-    await ref.read(tickerDataRepositoryProvider).generateTickerData(ticker);
+  _onRefreshSingle(String? ticker) async {
+    if (ticker == null) return;
+
+    final myTickersIndex = state.myTickers.indexOf(ticker);
+    if (myTickersIndex < 0) return;
+
+    final newTickerResult = await ref.read(tickerDataRepositoryProvider).generateTickerData(ticker);
+    if (newTickerResult == null) return;
+
+    final myTickerResults = List<TickerResult>.from(state.myTickersResults, growable: true)
+      ..removeAt(myTickersIndex)
+      ..insert(myTickersIndex - 1, newTickerResult);
+    state = state.copyWith(myTickersResults: myTickerResults);
   }
 
   _onDeleteTicker(ticker) async {
-    final myTickers = state.myTickers..remove(ticker);
-    final myTickersResults = state.myTickersResults..removeWhere((item) => item?.ticker == ticker);
+    if (ticker == null) return;
+
+    final myTickers = List<String>.from(state.myTickers, growable: true)..remove(ticker);
+    final myTickersResults = List<TickerResult>.from(state.myTickersResults, growable: true)
+      ..removeWhere((item) => item.ticker == ticker);
+
     state = state.copyWith(myTickers: myTickers, myTickersResults: myTickersResults);
     ref.read(localRepositoryProvider).setTickers(myTickers);
+
+    ref.navigate(const Back());
   }
 
   _onOpenTicker(TickerData ticker) async {}
