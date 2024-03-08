@@ -21,78 +21,102 @@ class WatchlistView extends ConsumerWidget {
       body: Column(
         children: [
           BOX_32,
-          Expanded(
-            child: ListView.separated(
-              padding: INSETS_16,
-              separatorBuilder: (context, index) => BOX_24,
-              itemCount: state.myTickersResults.length,
-              itemBuilder: (context, index) {
-                final item = state.myTickersResults[index];
-                return WatchlistTile(
-                  tickerKey: item?.ticker ?? '',
-                  onTapDelete: () => showDialog(
-                    context: context,
-                    builder: (context) => DeleteTickerDialog(item?.ticker),
-                  ),
-                  onTapRefresh: () => ref.controller().onEvent(RefreshSingle(item?.ticker)),
-                  leading: Text(
-                    item?.ticker ?? '',
-                    style: context.texts.headlineSmall,
-                  ),
-                  title: Text(
-                    'Volume: ${item?.volume}',
-                  ),
-                  subtitle: Row(
-                    children: [
-                      Text(
-                        'open: ${item?.open}',
-                      ),
-                      BOX_4,
-                      Text(
-                        'close: ${item?.close}',
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
-          ),
-          Padding(
-            padding: INSETS_16,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                NeumorphicIconButton(
-                  icon: const Icon(Icons.refresh_outlined),
-                  onPressed: () => ref.controller().onEvent(const RefreshAll()),
-                ),
-                NeumorphicIconButton(
-                  width: DOUBLE_160,
-                  icon: Text(
-                    '+ Add',
-                    style: context.texts.titleMedium,
-                  ),
-                  onPressed: () => showDialog(
-                    context: context,
-                    builder: (context) => const AddTickerDialog(),
-                  ),
-                ),
-                NeumorphicIconButton(
-                  icon: const Icon(Icons.settings_outlined),
-                  onPressed: () => showModalBottomSheet(
-                    context: context,
-                    builder: (_) => const SettingsSheet(),
-                    useSafeArea: true,
-                    showDragHandle: true,
-                  ),
-                ),
-              ],
-            ),
-          ),
+          _WatchlistSection(state: state, ref: ref),
+          _NavBarSection(ref: ref),
         ],
       ),
     );
   }
+}
+
+class _WatchlistSection extends StatelessWidget {
+  const _WatchlistSection({
+    required this.state,
+    required this.ref,
+  });
+
+  final WatchlistState state;
+  final WidgetRef ref;
+
+  @override
+  Widget build(BuildContext context) => Expanded(
+        child: ListView.separated(
+          padding: INSETS_16,
+          separatorBuilder: (context, index) => BOX_24,
+          itemCount: state.myTickersResults.length,
+          itemBuilder: (context, index) {
+            final item = state.myTickersResults[index];
+            return WatchlistTile(
+              tickerKey: item?.ticker ?? '',
+              onTapDelete: () => showDialog(
+                context: context,
+                builder: (context) => DeleteTickerDialog(item?.ticker),
+              ),
+              onTapRefresh: () => ref.controller().onEvent(RefreshSingle(item?.ticker)),
+              leading: Text(
+                item?.ticker ?? '',
+                style: context.texts.headlineSmall,
+              ),
+              title: Text(
+                'Volume: ${item?.volume}',
+              ),
+              subtitle: Row(
+                children: [
+                  Text(
+                    'open: ${item?.open}',
+                  ),
+                  BOX_4,
+                  Text(
+                    'close: ${item?.close}',
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      );
+}
+
+class _NavBarSection extends StatelessWidget {
+  const _NavBarSection({
+    required this.ref,
+  });
+
+  final WidgetRef ref;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: INSETS_16,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            NeumorphicIconButton(
+              icon: const Icon(Icons.refresh_outlined),
+              onPressed: () => ref.controller().onEvent(const RefreshAll()),
+            ),
+            NeumorphicIconButton(
+              width: DOUBLE_160,
+              icon: Text(
+                '+ Add',
+                style: context.texts.titleMedium,
+              ),
+              onPressed: () => showDialog(
+                context: context,
+                builder: (context) => const AddTickerDialog(),
+              ),
+            ),
+            NeumorphicIconButton(
+              icon: const Icon(Icons.settings_outlined),
+              onPressed: () => showModalBottomSheet(
+                context: context,
+                builder: (_) => const SettingsSheet(),
+                useSafeArea: true,
+                showDragHandle: true,
+              ),
+            ),
+          ],
+        ),
+      );
 }
 
 extension _WatchlistControllerExt on WidgetRef {
