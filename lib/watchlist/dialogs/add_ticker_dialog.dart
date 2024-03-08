@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stock_watchlist/global/ext/context_extensions.dart';
 import 'package:stock_watchlist/global/util/dimens.dart';
-import 'package:stock_watchlist/global/view/neumorphic_wrapper.dart';
-import 'package:stock_watchlist/global/view/reactive_text_field.dart';
 import 'package:stock_watchlist/watchlist/watchlist_controller.dart';
+import 'package:stock_watchlist/watchlist/widgets/neumorphic_icon_button.dart';
+import 'package:stock_watchlist/watchlist/widgets/reactive_text_field.dart';
 
 class AddTickerDialog extends ConsumerWidget {
   const AddTickerDialog({super.key});
@@ -30,31 +30,21 @@ class AddTickerDialog extends ConsumerWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    NeumorphicWrapper(
-                      height: DOUBLE_60,
-                      width: DOUBLE_100,
-                      child: ReactiveTextField(
-                        text: state.tempTicker ?? '',
-                        textAlign: TextAlign.center,
-                        autofocus: true,
-                        autocorrect: true,
-                        maxLines: 1,
-                        minLines: 1,
-                        textCapitalization: TextCapitalization.characters,
-                        keyboardType: TextInputType.multiline,
-                        onChange: (value) => ref.controller().onEvent(InputChanged(value)),
-                      ),
+                    ReactiveTextField(
+                      text: state.tempTicker ?? '',
+                      textAlign: TextAlign.center,
+                      autofocus: true,
+                      autocorrect: true,
+                      maxLines: 1,
+                      minLines: 1,
+                      textCapitalization: TextCapitalization.characters,
+                      keyboardType: TextInputType.multiline,
+                      onChange: (value) => ref.controller().onEvent(InputChanged(value)),
                     ),
                     BOX_16,
-                    NeumorphicWrapper(
-                      height: DOUBLE_60,
-                      child: IconButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(context.colors.background),
-                        ),
-                        icon: const Icon(Icons.send),
-                        onPressed: () => ref.controller().onEvent(Submit(state.tempTicker ?? '')),
-                      ),
+                    NeumorphicIconButton(
+                      icon: const Icon(Icons.send),
+                      onPressed: () => ref.controller().onEvent(Submit(state.tempTicker ?? '')),
                     ),
                   ],
                 ),

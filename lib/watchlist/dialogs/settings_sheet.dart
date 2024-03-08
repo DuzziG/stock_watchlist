@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:stock_watchlist/global/view/neumorphic_wrapper.dart';
 import 'package:stock_watchlist/watchlist/watchlist_controller.dart';
+import 'package:stock_watchlist/watchlist/widgets/neumorphic_wrapper.dart';
 
 class SettingsSheet extends ConsumerWidget {
   const SettingsSheet({super.key});
