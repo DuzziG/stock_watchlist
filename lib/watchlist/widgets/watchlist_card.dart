@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:stock_watchlist/global/ext/context_extensions.dart';
 
-import '../ext/context_extensions.dart';
-import '../util/dimens.dart';
+import '../../global/util/dimens.dart';
 import 'watchlist_tile.dart';
 
 part 'watchlist_card.freezed.dart';

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:stock_watchlist/global/ext/context_extensions.dart';
 import 'package:stock_watchlist/global/util/dimens.dart';
-import 'package:stock_watchlist/global/view/neumorphic_wrapper.dart';
+
+import 'neumorphic_wrapper.dart';
 
 class WatchlistTile extends StatelessWidget {
   const WatchlistTile({

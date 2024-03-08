@@ -58,4 +58,6 @@ const DOUBLE_60 = 60.0;
 
 const DOUBLE_80 = 80.0;
 
-const DOUBLE_100 = 100.0;
+const DOUBLE_120 = 120.0;
+
+const DOUBLE_160 = 160.0;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:stock_watchlist/global/util/dimens.dart';
+import 'package:stock_watchlist/watchlist/widgets/neumorphic_wrapper.dart';
 
 class ReactiveTextField extends StatefulWidget {
   const ReactiveTextField({
@@ -18,6 +20,8 @@ class ReactiveTextField extends StatefulWidget {
     this.inputFormatters,
     this.readOnly = false,
     this.textCapitalization = TextCapitalization.sentences,
+    this.width = DOUBLE_120,
+    this.height = DOUBLE_60,
   });
 
   final String text;
@@ -34,6 +38,8 @@ class ReactiveTextField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final bool readOnly;
   final TextCapitalization textCapitalization;
+  final double? width;
+  final double? height;
 
   @override
   State<ReactiveTextField> createState() => _ReactiveTextFieldState();
@@ -66,21 +72,25 @@ class _ReactiveTextFieldState extends State<ReactiveTextField> {
   }
 
   @override
-  Widget build(context) => TextField(
-        autofocus: widget.autofocus,
-        autocorrect: widget.autocorrect,
-        controller: _controller,
-        focusNode: _focusNode,
-        onChanged: widget.onChange,
-        onTap: widget.onTap,
-        textAlign: widget.textAlign,
-        decoration: widget.decoration,
-        keyboardType: widget.keyboardType,
-        maxLength: widget.maxLength,
-        maxLines: widget.maxLines,
-        minLines: widget.minLines,
-        inputFormatters: widget.inputFormatters,
-        readOnly: widget.readOnly,
-        textCapitalization: widget.textCapitalization,
+  Widget build(context) => NeumorphicWrapper(
+        width: widget.width,
+        height: widget.height,
+        child: TextField(
+          autofocus: widget.autofocus,
+          autocorrect: widget.autocorrect,
+          controller: _controller,
+          focusNode: _focusNode,
+          onChanged: widget.onChange,
+          onTap: widget.onTap,
+          textAlign: widget.textAlign,
+          decoration: widget.decoration,
+          keyboardType: widget.keyboardType,
+          maxLength: widget.maxLength,
+          maxLines: widget.maxLines,
+          minLines: widget.minLines,
+          inputFormatters: widget.inputFormatters,
+          readOnly: widget.readOnly,
+          textCapitalization: widget.textCapitalization,
+        ),
       );
 }
