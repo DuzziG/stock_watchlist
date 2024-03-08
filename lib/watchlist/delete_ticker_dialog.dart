@@ -34,7 +34,7 @@ class DeleteTickerDialog extends ConsumerWidget {
                         foregroundColor: MaterialStateProperty.all(context.colors.errorContainer),
                       ),
                       icon: const Icon(Icons.delete_outline),
-                      onPressed: () => ref.controller().onEvent(DeleteTicker(state.ticker ?? '')),
+                      onPressed: () => ref.controller().onEvent(DeleteTicker(state.ticker)),
                       label: const Text('Delete'),
                     ),
                     BOX_16,
