@@ -53,3 +53,9 @@ const DOUBLE_8 = 8.0;
 const DOUBLE_12 = 12.0;
 
 const DOUBLE_16 = 16.0;
+
+const DOUBLE_60 = 60.0;
+
+const DOUBLE_80 = 80.0;
+
+const DOUBLE_100 = 100.0;

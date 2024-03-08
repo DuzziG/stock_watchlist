@@ -31,8 +31,8 @@ class AddTickerDialog extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     NeumorphicWrapper(
-                      height: 60,
-                      width: 100,
+                      height: DOUBLE_60,
+                      width: DOUBLE_100,
                       child: ReactiveTextField(
                         text: state.tempTicker ?? '',
                         textAlign: TextAlign.center,
@@ -47,7 +47,7 @@ class AddTickerDialog extends ConsumerWidget {
                     ),
                     BOX_16,
                     NeumorphicWrapper(
-                      height: 50,
+                      height: DOUBLE_60,
                       child: IconButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all(context.colors.background),

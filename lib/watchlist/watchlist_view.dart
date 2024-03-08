@@ -4,7 +4,7 @@ import 'package:stock_watchlist/global/ext/context_extensions.dart';
 import 'package:stock_watchlist/global/util/dimens.dart';
 import 'package:stock_watchlist/global/view/watchlist_tile.dart';
 import 'package:stock_watchlist/watchlist/add_ticker_dialog.dart';
-import 'package:stock_watchlist/watchlist/delete_dialog.dart';
+import 'package:stock_watchlist/watchlist/delete_ticker_dialog.dart';
 import 'package:stock_watchlist/watchlist/settings_sheet.dart';
 import 'package:stock_watchlist/watchlist/watchlist_controller.dart';
 
@@ -26,8 +26,6 @@ class WatchlistView extends ConsumerWidget {
             child: ListView.separated(
               padding: INSETS_16,
               separatorBuilder: (context, index) => BOX_24,
-              //TODO uncomment this line and delete the one bellow when i generate myTickersResults
-              // itemCount: state.myTickersResults.length,
               itemCount: state.myTickersResults.length,
               itemBuilder: (context, index) => NeumorphicWrapper(
                 height: 80,
@@ -74,8 +72,8 @@ class WatchlistView extends ConsumerWidget {
                   ),
                 ),
                 NeumorphicWrapper(
-                  height: 50,
-                  width: 100,
+                  height: DOUBLE_60,
+                  width: DOUBLE_100,
                   child: IconButton(
                     icon: Text(
                       '+ Add',
