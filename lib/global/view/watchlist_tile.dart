@@ -40,14 +40,14 @@ class WatchlistTile extends StatelessWidget {
           SlidableAction(
             // An action can be bigger than the others.
             flex: 2,
-            onPressed: (context) => onTapDelete,
+            onPressed: (context) => onTapDelete?.call(),
             backgroundColor: context.colors.background,
             foregroundColor: context.colors.errorContainer,
             icon: Icons.delete_outline,
             label: 'Delete',
           ),
           SlidableAction(
-            onPressed: (context) => onTapRefresh,
+            onPressed: (context) => onTapRefresh?.call(),
             backgroundColor: context.colors.background,
             icon: Icons.refresh_outlined,
             label: 'Refresh',
