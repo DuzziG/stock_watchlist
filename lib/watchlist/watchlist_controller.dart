@@ -77,7 +77,6 @@ class WatchlistController extends _$WatchlistController {
   _onSubmit(String value) async {
     final tempListBefore = await ref.read(localRepositoryProvider).getTickers();
     final tempList = tempListBefore.toList(growable: true);
-    print('ASD $tempList');
     final myTickers = tempList..add(value);
     ref.read(localRepositoryProvider).setTickers(myTickers.toSet().toList());
 

@@ -44,7 +44,6 @@ class StoreLocalRepository extends LocalRepository {
   Future<List<String>> getTickers() async {
     final shared = await SharedPreferences.getInstance();
     final List<String>? tickers = shared.getStringList('tickers');
-    print('ASD tickers $tickers');
     return tickers ?? [];
   }
 }
