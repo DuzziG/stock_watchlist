@@ -5,16 +5,20 @@ part 'ticker_result.g.dart';
 
 @freezed
 class TickerResult with _$TickerResult {
-  const TickerResult._();
-
   const factory TickerResult({
-    String? ticker,
+    required String ticker,
+    String? bidPrice,
+    String? askPrice,
+    String? currentPrice,
+    String? lastTrade,
     String? open,
     String? close,
     String? high,
     String? low,
     String? volume,
   }) = _TickerResult;
+
+  const TickerResult._();
 
   factory TickerResult.fromJson(Map<String, dynamic> json) => _$TickerResultFromJson(json);
 }
