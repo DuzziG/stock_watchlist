@@ -53,74 +53,69 @@ class WatchlistCard extends StatelessWidget {
   final String tickerKey;
 
   @override
-  Widget build(context) => Padding(
-        padding: padding,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            BOX_8,
-            Container(
-              decoration: BoxDecoration(
-                border: border,
-                color: context.colors.secondaryContainer,
-                boxShadow: boxShadow,
-              ),
-              child: Column(
-                children: [
-                  if (title != null) ...[
-                    if (title?.imageUrl != null)
-                      ClipRRect(
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(CARD_RADIUS),
-                          topRight: Radius.circular(CARD_RADIUS),
-                        ),
-                        child: Image.network(
-                          title?.imageUrl ?? '',
-                          fit: BoxFit.cover,
-                          height: 180,
-                          width: double.infinity,
-                        ),
+  Widget build(context) => Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          BOX_8,
+          Container(
+            decoration: BoxDecoration(
+              border: border,
+            ),
+            child: Column(
+              children: [
+                if (title != null) ...[
+                  if (title?.imageUrl != null)
+                    ClipRRect(
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(CARD_RADIUS),
+                        topRight: Radius.circular(CARD_RADIUS),
                       ),
-                    WatchlistTile(
-                      tickerKey: tickerKey,
-                      leading: title?.leading,
-                      title: title?.text != null ? Text(title?.text ?? '') : null,
-                      subtitle: title?.subtext != null
-                          ? Text(
-                              title?.subtext ?? '',
-                              style: context.texts.bodySmall,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            )
-                          : null,
-                      trailing: title?.trailing,
-                    ),
-                  ],
-                  if (body != null)
-                    Padding(
-                      padding: INSETS_HORIZONTAL_16.copyWith(
-                        top: title == null ? 16.0 : 0.0,
-                        bottom: actions?.isNotEmpty == true ? 0.0 : 16.0,
+                      child: Image.network(
+                        title?.imageUrl ?? '',
+                        fit: BoxFit.cover,
+                        height: 180,
+                        width: double.infinity,
                       ),
-                      child: body,
                     ),
-                  if (actions != null)
-                    Row(
-                      children: [
-                        ...(actions ?? []).map(
-                          (action) => Expanded(
-                            child: TextButton(
-                              child: Text(action.text ?? ''),
-                              onPressed: () => action.onPressed?.call(),
-                            ),
+                  WatchlistTile(
+                    tickerKey: tickerKey,
+                    leading: title?.leading,
+                    title: title?.text != null ? Text(title?.text ?? '') : null,
+                    subtitle: title?.subtext != null
+                        ? Text(
+                            title?.subtext ?? '',
+                            style: context.texts.bodySmall,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          )
+                        : null,
+                    trailing: title?.trailing,
+                  ),
+                ],
+                if (body != null)
+                  Padding(
+                    padding: INSETS_HORIZONTAL_16.copyWith(
+                      top: title == null ? 16.0 : 0.0,
+                      bottom: actions?.isNotEmpty == true ? 0.0 : 16.0,
+                    ),
+                    child: body,
+                  ),
+                if (actions != null)
+                  Row(
+                    children: [
+                      ...(actions ?? []).map(
+                        (action) => Expanded(
+                          child: TextButton(
+                            child: Text(action.text ?? ''),
+                            onPressed: () => action.onPressed?.call(),
                           ),
                         ),
-                      ],
-                    ),
-                ],
-              ),
+                      ),
+                    ],
+                  ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       );
 }
