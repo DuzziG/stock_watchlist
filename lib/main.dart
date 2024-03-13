@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stack_trace/stack_trace.dart';
+import 'package:stock_watchlist/watchlist/watchlist_view.dart';
 
-import 'global/base/base_view.dart';
 import 'global/theme/themes.dart';
 import 'main_controller.dart';
 
@@ -16,7 +16,7 @@ void main() async {
     const ProviderScope(
       child: _ThemeWrapper(
         child: _MainApp(
-          child: BaseView(),
+          child: WatchlistView(),
         ),
       ),
     ),
