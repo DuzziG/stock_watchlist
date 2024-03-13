@@ -58,7 +58,7 @@ class WatchlistTile extends StatelessWidget {
       child: NeumorphicWrapper(
         child: ListTile(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(DOUBLE_16),
+            borderRadius: BorderRadius.circular(CARD_RADIUS),
           ),
           contentPadding: contentPadding,
           title: title,

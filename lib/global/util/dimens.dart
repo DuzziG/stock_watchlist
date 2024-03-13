@@ -42,7 +42,11 @@ const OFFSET_2 = Offset(2, 2);
 
 const OFFSET_4 = Offset(4, 4);
 
+const OFFSET_6 = Offset(6, 6);
+
 const OFFSET_8 = Offset(8, 8);
+
+const CARD_RADIUS = 24.0;
 
 const DOUBLE_0 = 0.0;
 
