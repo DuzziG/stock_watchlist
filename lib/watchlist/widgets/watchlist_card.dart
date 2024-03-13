@@ -71,8 +71,8 @@ class WatchlistCard extends StatelessWidget {
                     if (title?.imageUrl != null)
                       ClipRRect(
                         borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(DOUBLE_16),
-                          topRight: Radius.circular(DOUBLE_16),
+                          topLeft: Radius.circular(CARD_RADIUS),
+                          topRight: Radius.circular(CARD_RADIUS),
                         ),
                         child: Image.network(
                           title?.imageUrl ?? '',
