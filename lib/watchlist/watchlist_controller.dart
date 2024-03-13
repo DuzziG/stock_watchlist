@@ -1,52 +1,39 @@
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:stock_watchlist/global/di/navigation_providers.dart';
+import 'package:stock_watchlist/global/di/ticker_data_providers.dart';
 
 import '../../data/model/ticker_result.dart';
-import '../../global/di/ticker_data_providers.dart';
 import '../global/di/local_providers.dart';
+import '../main_controller.dart';
 
 part 'watchlist_controller.freezed.dart';
 part 'watchlist_controller.g.dart';
 
 @freezed
-sealed class TickerData with _$TickerData {
-  const factory TickerData({
-    required String open,
-    required String close,
-    required String high,
-    required String low,
-  }) = _TickerData;
-}
-
-@freezed
 sealed class WatchlistEvent with _$WatchlistEvent {
-  const factory WatchlistEvent.openTicker(TickerData ticker) = OpenTicker;
-
   const factory WatchlistEvent.inputChanged(String value) = InputChanged;
 
-  const factory WatchlistEvent.submit(String value) = Submit;
+  const factory WatchlistEvent.addTicker(String ticker) = AddTicker;
 
-  const factory WatchlistEvent.refreshAll() = RefreshAll;
-
-  const factory WatchlistEvent.refreshSingle(String? ticker) = RefreshSingle;
-
-  const factory WatchlistEvent.deleteTicker(String ticker) = DeleteTicker;
+  const factory WatchlistEvent.removeTicker(String ticker) = RemoveTicker;
 
   const factory WatchlistEvent.dismissDialog() = DismissDialog;
+
+  const factory WatchlistEvent.changeTheme(ThemeMode themeMode) = ChangeTheme;
 }
 
 @freezed
 sealed class WatchlistState with _$WatchlistState {
   const factory WatchlistState({
-    required String ticker,
-    String? tempTicker,
-    required List<String> myTickers,
-    required List<TickerResult?> myTickersResults,
+    required ThemeMode selectedTheme,
+    String? addTickerValue,
+    required Map<String, TickerResult> myTickersResults,
   }) = _WatchlistState;
 }
 
-@Riverpod(keepAlive: true)
+@Riverpod()
 class WatchlistController extends _$WatchlistController {
   bool _isInitialized = false;
 
@@ -55,89 +42,102 @@ class WatchlistController extends _$WatchlistController {
     final existingState = _getExistingState();
 
     if (!_isInitialized) {
-      _onRefreshAll();
-      _isInitialized = true;
+      _initialize();
     }
 
     return existingState.copyWith(
-      tempTicker: '',
+      selectedTheme: ref.watch(localRepositoryProvider).getThemeMode(),
     );
   }
 
   onEvent(WatchlistEvent event) => switch (event) {
-        OpenTicker(:final ticker) => _onOpenTicker(ticker),
-        InputChanged(:final value) => state = state.copyWith(tempTicker: value),
-        Submit(:final value) => _onSubmit(value),
-        RefreshAll() => _onRefreshAll(),
-        RefreshSingle(:final ticker) => _onRefreshSingle(ticker),
-        DeleteTicker(:final ticker) => _onDeleteTicker(ticker),
+        InputChanged(:final value) => state = state.copyWith(addTickerValue: value),
+        AddTicker(:final ticker) => _onAddTicker(ticker),
+        RemoveTicker(:final ticker) => _onRemoveTicker(ticker),
         DismissDialog() => ref.navigate(const Back()),
+        ChangeTheme(:final themeMode) => _onChangeTheme(themeMode),
       };
 
-  _onSubmit(String value) async {
-    final tempListBefore = await ref.read(localRepositoryProvider).getTickers();
-    final tempList = tempListBefore.toList(growable: true);
-    final myTickers = tempList..add(value);
-    ref.read(localRepositoryProvider).setTickers(myTickers.toSet().toList());
+  _initialize() async {
+    final dataRepository = ref.read(cryptoDataRepositoryProvider);
 
-    state = state.copyWith(myTickers: myTickers);
+    await dataRepository.closeSocket();
+    await dataRepository.openSocket();
 
-    final response = await ref.read(tickerDataRepositoryProvider).generateTickerData(value);
+    ref.onDispose(() {
+      ref.read(cryptoDataRepositoryProvider).closeSocket();
+    });
 
-    final tempMyTickerResults = state.myTickersResults.toList(growable: true);
-    final myTickerResults = tempMyTickerResults..add(response);
-    state = state.copyWith(myTickersResults: myTickerResults.toSet().toList(), tempTicker: '');
+    _isInitialized = true;
 
-    ref.navigate(const Back());
+    dataRepository.getStream().listen((tickerResult) {
+      final currentResults = Map<String, TickerResult>.from(state.myTickersResults);
+      currentResults[tickerResult.ticker] = tickerResult;
+
+      state = state.copyWith(myTickersResults: currentResults);
+    });
+
+    _addLocalTickers();
   }
 
-  _onRefreshAll() async {
-    final myTickers = await ref.read(localRepositoryProvider).getTickers();
-    final myTickerResults = await Future.wait<TickerResult?>(
-      myTickers.map((element) async => await ref.read(tickerDataRepositoryProvider).generateTickerData(element)),
+  _addLocalTickers() async {
+    final tickers = await ref.read(localRepositoryProvider).getTickers();
+
+    state = state.copyWith(
+      myTickersResults: {for (final ticker in tickers) ticker: TickerResult(ticker: ticker)},
     );
 
-    state = state.copyWith(myTickersResults: myTickerResults);
+    ref.read(cryptoDataRepositoryProvider).subscribe(tickers);
   }
 
-  _onRefreshSingle(String? ticker) async {
-    if (ticker == null) return;
+  _onAddTicker(String ticker) async {
+    _addTickerToList(ticker);
 
-    final myTickersIndex = state.myTickers.indexOf(ticker);
-    if (myTickersIndex < 0) return;
+    ref.read(cryptoDataRepositoryProvider).subscribe([ticker]);
 
-    final newTickerResult = await ref.read(tickerDataRepositoryProvider).generateTickerData(ticker);
-    if (newTickerResult == null) return;
+    final currentResults = Map<String, TickerResult>.from(state.myTickersResults);
+    currentResults[ticker] = TickerResult(ticker: ticker);
 
-    final myTickerResults = List<TickerResult>.from(state.myTickersResults, growable: true)
-      ..removeAt(myTickersIndex)
-      ..insert(myTickersIndex - 1, newTickerResult);
-    state = state.copyWith(myTickersResults: myTickerResults);
+    state = state.copyWith(myTickersResults: currentResults);
   }
 
-  _onDeleteTicker(ticker) async {
-    if (ticker == null) return;
+  _onRemoveTicker(String ticker) {
+    _removeTickerFromList(ticker);
 
-    final myTickers = List<String>.from(state.myTickers, growable: true)..remove(ticker);
-    final myTickersResults = List<TickerResult>.from(state.myTickersResults, growable: true)
-      ..removeWhere((item) => item.ticker == ticker);
+    ref.read(cryptoDataRepositoryProvider).unsubscribe([ticker]);
 
-    state = state.copyWith(myTickers: myTickers, myTickersResults: myTickersResults);
-    ref.read(localRepositoryProvider).setTickers(myTickers);
+    final currentResults = Map<String, TickerResult>.from(state.myTickersResults);
+    currentResults.remove(ticker);
 
-    ref.navigate(const Back());
+    state = state.copyWith(myTickersResults: currentResults);
   }
 
-  _onOpenTicker(TickerData ticker) async {}
+  _onChangeTheme(ThemeMode themeMode) async {
+    await ref.read(localRepositoryProvider).setThemeMode(themeMode);
+    ref.read(mainControllerProvider.notifier).onEvent(const UpdateTheme());
+
+    state = state.copyWith(selectedTheme: themeMode);
+  }
+
+  _addTickerToList(String value) async {
+    final tickers = (await ref.read(localRepositoryProvider).getTickers()).toList(growable: true);
+    final newTickers = tickers..add(value);
+    ref.read(localRepositoryProvider).setTickers(newTickers.toSet().toList());
+  }
+
+  _removeTickerFromList(String value) async {
+    final tickers = (await ref.read(localRepositoryProvider).getTickers()).toList(growable: true);
+    final newTickers = tickers..remove(value);
+    ref.read(localRepositoryProvider).setTickers(newTickers.toSet().toList());
+  }
 
   WatchlistState _getExistingState() {
     try {
       return state;
     } catch (e) {
       return const WatchlistState(
-        ticker: '',
-        myTickers: [],
-        myTickersResults: [],
+        myTickersResults: {},
+        selectedTheme: ThemeMode.light,
       );
     }
   }

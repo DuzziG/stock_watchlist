@@ -19,7 +19,7 @@ class AddTickerDialog extends ConsumerWidget {
         child: Container(
           decoration: BoxDecoration(
             color: context.colors.background,
-            borderRadius: BorderRadius.circular(DOUBLE_16),
+            borderRadius: BorderRadius.circular(CARD_RADIUS),
           ),
           child: Padding(
             padding: INSETS_32,
@@ -31,7 +31,7 @@ class AddTickerDialog extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ReactiveTextField(
-                      text: state.tempTicker ?? '',
+                      text: state.addTickerValue ?? '',
                       textAlign: TextAlign.center,
                       autofocus: true,
                       autocorrect: true,
@@ -44,7 +44,7 @@ class AddTickerDialog extends ConsumerWidget {
                     BOX_16,
                     NeumorphicIconButton(
                       icon: const Icon(Icons.send),
-                      onPressed: () => ref.controller().onEvent(Submit(state.tempTicker ?? '')),
+                      onPressed: () => ref.controller().onEvent(AddTicker(state.addTickerValue ?? '')),
                     ),
                   ],
                 ),

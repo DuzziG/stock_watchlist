@@ -7,12 +7,12 @@ part of 'watchlist_controller.dart';
 // **************************************************************************
 
 String _$watchlistControllerHash() =>
-    r'a1e582f0de0333149796edb0ade3a507d77113da';
+    r'6f67d229b1913e480aac47cf4952c0737086f803';
 
 /// See also [WatchlistController].
 @ProviderFor(WatchlistController)
 final watchlistControllerProvider =
-    NotifierProvider<WatchlistController, WatchlistState>.internal(
+    AutoDisposeNotifierProvider<WatchlistController, WatchlistState>.internal(
   WatchlistController.new,
   name: r'watchlistControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -22,6 +22,6 @@ final watchlistControllerProvider =
   allTransitiveDependencies: null,
 );
 
-typedef _$WatchlistController = Notifier<WatchlistState>;
+typedef _$WatchlistController = AutoDisposeNotifier<WatchlistState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package

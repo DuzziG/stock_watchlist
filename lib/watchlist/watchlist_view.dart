@@ -3,11 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stock_watchlist/global/ext/context_extensions.dart';
 import 'package:stock_watchlist/global/util/dimens.dart';
 import 'package:stock_watchlist/watchlist/dialogs/add_ticker_dialog.dart';
-import 'package:stock_watchlist/watchlist/dialogs/delete_ticker_dialog.dart';
 import 'package:stock_watchlist/watchlist/dialogs/settings_sheet.dart';
 import 'package:stock_watchlist/watchlist/watchlist_controller.dart';
 import 'package:stock_watchlist/watchlist/widgets/neumorphic_icon_button.dart';
 import 'package:stock_watchlist/watchlist/widgets/watchlist_tile.dart';
+
+import 'dialogs/delete_ticker_dialog.dart';
 
 class WatchlistView extends ConsumerWidget {
   const WatchlistView({super.key});
@@ -22,7 +23,7 @@ class WatchlistView extends ConsumerWidget {
         children: [
           BOX_32,
           _WatchlistSection(state: state, ref: ref),
-          _NavBarSection(ref: ref),
+          const _NavBarSection(),
         ],
       ),
     );
@@ -45,29 +46,29 @@ class _WatchlistSection extends StatelessWidget {
           separatorBuilder: (context, index) => BOX_24,
           itemCount: state.myTickersResults.length,
           itemBuilder: (context, index) {
-            final item = state.myTickersResults[index];
+            final item = state.myTickersResults.entries.elementAt(index).value;
             return WatchlistTile(
-              tickerKey: item?.ticker ?? '',
+              tickerKey: item.ticker,
               onTapDelete: () => showDialog(
                 context: context,
-                builder: (context) => DeleteTickerDialog(item?.ticker),
+                builder: (context) => DeleteTickerDialog(ticker: item.ticker),
               ),
-              onTapRefresh: () => ref.controller().onEvent(RefreshSingle(item?.ticker)),
+              onTapRefresh: () {},
               leading: Text(
-                item?.ticker ?? '',
+                item.ticker,
                 style: context.texts.headlineSmall,
               ),
               title: Text(
-                'Volume: ${item?.volume}',
+                'Volume: ${item.volume}',
               ),
               subtitle: Row(
                 children: [
                   Text(
-                    'open: ${item?.open}',
+                    'open: ${item.open}',
                   ),
                   BOX_4,
                   Text(
-                    'close: ${item?.close}',
+                    'close: ${item.close}',
                   ),
                 ],
               ),
@@ -78,11 +79,7 @@ class _WatchlistSection extends StatelessWidget {
 }
 
 class _NavBarSection extends StatelessWidget {
-  const _NavBarSection({
-    required this.ref,
-  });
-
-  final WidgetRef ref;
+  const _NavBarSection();
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -90,10 +87,6 @@ class _NavBarSection extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            NeumorphicIconButton(
-              icon: const Icon(Icons.refresh_outlined),
-              onPressed: () => ref.controller().onEvent(const RefreshAll()),
-            ),
             NeumorphicIconButton(
               width: DOUBLE_160,
               icon: Text(
