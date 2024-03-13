@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stock_watchlist/global/ext/context_extensions.dart';
 import 'package:stock_watchlist/global/util/dimens.dart';
+import 'package:stock_watchlist/watchlist/dialogs/delete_all_tickers_dialog.dart';
 import 'package:stock_watchlist/watchlist/watchlist_controller.dart';
 
 import '../widgets/neumorphic_radio_view.dart';
+import '../widgets/watchlist_tile.dart';
 
 class SettingsSheet extends ConsumerWidget {
   const SettingsSheet({super.key});
@@ -21,6 +23,7 @@ class SettingsSheet extends ConsumerWidget {
             topRight: Radius.circular(CARD_RADIUS),
           )),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           BOX_16,
           NeumorphicRadioView<ThemeMode>(
@@ -47,6 +50,29 @@ class SettingsSheet extends ConsumerWidget {
             ],
             onItem: (themeData) => ref.controller().onEvent(ChangeTheme(themeData)),
           ),
+          BOX_16,
+          Padding(
+            padding: INSETS_HORIZONTAL_16,
+            child: Text('Delete', style: context.texts.headlineMedium),
+          ),
+          BOX_16,
+          Padding(
+            padding: INSETS_HORIZONTAL_8,
+            child: WatchlistTile(
+              tickerKey: 'delete all',
+              title: const Text('Delete'),
+              trailing: IconButton(
+                icon: Icon(
+                  Icons.delete_outline_outlined,
+                  color: context.colors.error,
+                ),
+                onPressed: () => showDialog(
+                  context: context,
+                  builder: (context) => const DeleteAllTickersDialog(),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );

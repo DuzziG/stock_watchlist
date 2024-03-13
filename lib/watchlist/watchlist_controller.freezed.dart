@@ -21,6 +21,7 @@ mixin _$WatchlistEvent {
     required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
+    required TResult Function() removeAllTickers,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) =>
@@ -30,6 +31,7 @@ mixin _$WatchlistEvent {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
+    TResult? Function()? removeAllTickers,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) =>
@@ -39,6 +41,7 @@ mixin _$WatchlistEvent {
     TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
+    TResult Function()? removeAllTickers,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -49,6 +52,7 @@ mixin _$WatchlistEvent {
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
+    required TResult Function(RemoveAllTickers value) removeAllTickers,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) =>
@@ -58,6 +62,7 @@ mixin _$WatchlistEvent {
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
+    TResult? Function(RemoveAllTickers value)? removeAllTickers,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) =>
@@ -67,6 +72,7 @@ mixin _$WatchlistEvent {
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
+    TResult Function(RemoveAllTickers value)? removeAllTickers,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),
@@ -159,6 +165,7 @@ class _$InputChangedImpl implements InputChanged {
     required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
+    required TResult Function() removeAllTickers,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) {
@@ -171,6 +178,7 @@ class _$InputChangedImpl implements InputChanged {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
+    TResult? Function()? removeAllTickers,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) {
@@ -183,6 +191,7 @@ class _$InputChangedImpl implements InputChanged {
     TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
+    TResult Function()? removeAllTickers,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -199,6 +208,7 @@ class _$InputChangedImpl implements InputChanged {
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
+    required TResult Function(RemoveAllTickers value) removeAllTickers,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) {
@@ -211,6 +221,7 @@ class _$InputChangedImpl implements InputChanged {
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
+    TResult? Function(RemoveAllTickers value)? removeAllTickers,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) {
@@ -223,6 +234,7 @@ class _$InputChangedImpl implements InputChanged {
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
+    TResult Function(RemoveAllTickers value)? removeAllTickers,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),
@@ -310,6 +322,7 @@ class _$AddTickerImpl implements AddTicker {
     required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
+    required TResult Function() removeAllTickers,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) {
@@ -322,6 +335,7 @@ class _$AddTickerImpl implements AddTicker {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
+    TResult? Function()? removeAllTickers,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) {
@@ -334,6 +348,7 @@ class _$AddTickerImpl implements AddTicker {
     TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
+    TResult Function()? removeAllTickers,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -350,6 +365,7 @@ class _$AddTickerImpl implements AddTicker {
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
+    required TResult Function(RemoveAllTickers value) removeAllTickers,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) {
@@ -362,6 +378,7 @@ class _$AddTickerImpl implements AddTicker {
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
+    TResult? Function(RemoveAllTickers value)? removeAllTickers,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) {
@@ -374,6 +391,7 @@ class _$AddTickerImpl implements AddTicker {
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
+    TResult Function(RemoveAllTickers value)? removeAllTickers,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),
@@ -461,6 +479,7 @@ class _$RemoveTickerImpl implements RemoveTicker {
     required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
+    required TResult Function() removeAllTickers,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) {
@@ -473,6 +492,7 @@ class _$RemoveTickerImpl implements RemoveTicker {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
+    TResult? Function()? removeAllTickers,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) {
@@ -485,6 +505,7 @@ class _$RemoveTickerImpl implements RemoveTicker {
     TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
+    TResult Function()? removeAllTickers,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -501,6 +522,7 @@ class _$RemoveTickerImpl implements RemoveTicker {
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
+    required TResult Function(RemoveAllTickers value) removeAllTickers,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) {
@@ -513,6 +535,7 @@ class _$RemoveTickerImpl implements RemoveTicker {
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
+    TResult? Function(RemoveAllTickers value)? removeAllTickers,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) {
@@ -525,6 +548,7 @@ class _$RemoveTickerImpl implements RemoveTicker {
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
+    TResult Function(RemoveAllTickers value)? removeAllTickers,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),
@@ -543,6 +567,132 @@ abstract class RemoveTicker implements WatchlistEvent {
   @JsonKey(ignore: true)
   _$$RemoveTickerImplCopyWith<_$RemoveTickerImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveAllTickersImplCopyWith<$Res> {
+  factory _$$RemoveAllTickersImplCopyWith(_$RemoveAllTickersImpl value,
+          $Res Function(_$RemoveAllTickersImpl) then) =
+      __$$RemoveAllTickersImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RemoveAllTickersImplCopyWithImpl<$Res>
+    extends _$WatchlistEventCopyWithImpl<$Res, _$RemoveAllTickersImpl>
+    implements _$$RemoveAllTickersImplCopyWith<$Res> {
+  __$$RemoveAllTickersImplCopyWithImpl(_$RemoveAllTickersImpl _value,
+      $Res Function(_$RemoveAllTickersImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RemoveAllTickersImpl implements RemoveAllTickers {
+  const _$RemoveAllTickersImpl();
+
+  @override
+  String toString() {
+    return 'WatchlistEvent.removeAllTickers()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RemoveAllTickersImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) inputChanged,
+    required TResult Function(String ticker) addTicker,
+    required TResult Function(String ticker) removeTicker,
+    required TResult Function() removeAllTickers,
+    required TResult Function() dismissDialog,
+    required TResult Function(ThemeMode themeMode) changeTheme,
+  }) {
+    return removeAllTickers();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? inputChanged,
+    TResult? Function(String ticker)? addTicker,
+    TResult? Function(String ticker)? removeTicker,
+    TResult? Function()? removeAllTickers,
+    TResult? Function()? dismissDialog,
+    TResult? Function(ThemeMode themeMode)? changeTheme,
+  }) {
+    return removeAllTickers?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? inputChanged,
+    TResult Function(String ticker)? addTicker,
+    TResult Function(String ticker)? removeTicker,
+    TResult Function()? removeAllTickers,
+    TResult Function()? dismissDialog,
+    TResult Function(ThemeMode themeMode)? changeTheme,
+    required TResult orElse(),
+  }) {
+    if (removeAllTickers != null) {
+      return removeAllTickers();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InputChanged value) inputChanged,
+    required TResult Function(AddTicker value) addTicker,
+    required TResult Function(RemoveTicker value) removeTicker,
+    required TResult Function(RemoveAllTickers value) removeAllTickers,
+    required TResult Function(DismissDialog value) dismissDialog,
+    required TResult Function(ChangeTheme value) changeTheme,
+  }) {
+    return removeAllTickers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InputChanged value)? inputChanged,
+    TResult? Function(AddTicker value)? addTicker,
+    TResult? Function(RemoveTicker value)? removeTicker,
+    TResult? Function(RemoveAllTickers value)? removeAllTickers,
+    TResult? Function(DismissDialog value)? dismissDialog,
+    TResult? Function(ChangeTheme value)? changeTheme,
+  }) {
+    return removeAllTickers?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InputChanged value)? inputChanged,
+    TResult Function(AddTicker value)? addTicker,
+    TResult Function(RemoveTicker value)? removeTicker,
+    TResult Function(RemoveAllTickers value)? removeAllTickers,
+    TResult Function(DismissDialog value)? dismissDialog,
+    TResult Function(ChangeTheme value)? changeTheme,
+    required TResult orElse(),
+  }) {
+    if (removeAllTickers != null) {
+      return removeAllTickers(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RemoveAllTickers implements WatchlistEvent {
+  const factory RemoveAllTickers() = _$RemoveAllTickersImpl;
 }
 
 /// @nodoc
@@ -586,6 +736,7 @@ class _$DismissDialogImpl implements DismissDialog {
     required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
+    required TResult Function() removeAllTickers,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) {
@@ -598,6 +749,7 @@ class _$DismissDialogImpl implements DismissDialog {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
+    TResult? Function()? removeAllTickers,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) {
@@ -610,6 +762,7 @@ class _$DismissDialogImpl implements DismissDialog {
     TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
+    TResult Function()? removeAllTickers,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -626,6 +779,7 @@ class _$DismissDialogImpl implements DismissDialog {
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
+    required TResult Function(RemoveAllTickers value) removeAllTickers,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) {
@@ -638,6 +792,7 @@ class _$DismissDialogImpl implements DismissDialog {
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
+    TResult? Function(RemoveAllTickers value)? removeAllTickers,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) {
@@ -650,6 +805,7 @@ class _$DismissDialogImpl implements DismissDialog {
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
+    TResult Function(RemoveAllTickers value)? removeAllTickers,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),
@@ -733,6 +889,7 @@ class _$ChangeThemeImpl implements ChangeTheme {
     required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
+    required TResult Function() removeAllTickers,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) {
@@ -745,6 +902,7 @@ class _$ChangeThemeImpl implements ChangeTheme {
     TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
+    TResult? Function()? removeAllTickers,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) {
@@ -757,6 +915,7 @@ class _$ChangeThemeImpl implements ChangeTheme {
     TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
+    TResult Function()? removeAllTickers,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -773,6 +932,7 @@ class _$ChangeThemeImpl implements ChangeTheme {
     required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
+    required TResult Function(RemoveAllTickers value) removeAllTickers,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) {
@@ -785,6 +945,7 @@ class _$ChangeThemeImpl implements ChangeTheme {
     TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
+    TResult? Function(RemoveAllTickers value)? removeAllTickers,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) {
@@ -797,6 +958,7 @@ class _$ChangeThemeImpl implements ChangeTheme {
     TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
+    TResult Function(RemoveAllTickers value)? removeAllTickers,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),

@@ -19,6 +19,8 @@ sealed class WatchlistEvent with _$WatchlistEvent {
 
   const factory WatchlistEvent.removeTicker(String ticker) = RemoveTicker;
 
+  const factory WatchlistEvent.removeAllTickers() = RemoveAllTickers;
+
   const factory WatchlistEvent.dismissDialog() = DismissDialog;
 
   const factory WatchlistEvent.changeTheme(ThemeMode themeMode) = ChangeTheme;
@@ -54,6 +56,7 @@ class WatchlistController extends _$WatchlistController {
         InputChanged(:final value) => state = state.copyWith(addTickerValue: value),
         AddTicker(:final ticker) => _onAddTicker(ticker),
         RemoveTicker(:final ticker) => _onRemoveTicker(ticker),
+        RemoveAllTickers() => _onRemoveAllTickers(),
         DismissDialog() => ref.navigate(const Back()),
         ChangeTheme(:final themeMode) => _onChangeTheme(themeMode),
       };
@@ -99,9 +102,11 @@ class WatchlistController extends _$WatchlistController {
     currentResults[ticker] = TickerResult(ticker: ticker);
 
     state = state.copyWith(myTickersResults: currentResults);
+    ref.navigate(const Back());
   }
 
   _onRemoveTicker(String ticker) {
+    ref.navigate(const Back());
     _removeTickerFromList(ticker);
 
     ref.read(cryptoDataRepositoryProvider).unsubscribe([ticker]);
@@ -110,6 +115,16 @@ class WatchlistController extends _$WatchlistController {
     currentResults.remove(ticker);
 
     state = state.copyWith(myTickersResults: currentResults);
+  }
+
+  _onRemoveAllTickers() async {
+    ref.navigate(const Back());
+    ref.navigate(const Back());
+    final tickers = (await ref.read(localRepositoryProvider).getTickers()).toList(growable: true);
+    ref.read(localRepositoryProvider).setTickers([]);
+
+    ref.read(cryptoDataRepositoryProvider).unsubscribe(tickers.toSet().toList());
+    state = state.copyWith(myTickersResults: {});
   }
 
   _onChangeTheme(ThemeMode themeMode) async {

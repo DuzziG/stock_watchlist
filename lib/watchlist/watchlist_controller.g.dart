@@ -7,7 +7,7 @@ part of 'watchlist_controller.dart';
 // **************************************************************************
 
 String _$watchlistControllerHash() =>
-    r'6f67d229b1913e480aac47cf4952c0737086f803';
+    r'4aade2cb369c541a422f28a8e48e04e0c211a963';
 
 /// See also [WatchlistController].
 @ProviderFor(WatchlistController)
