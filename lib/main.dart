@@ -61,7 +61,7 @@ class _MainApp extends ConsumerWidget {
       title: 'Stock watchlist',
       theme: getLightTheme(),
       darkTheme: getDarkTheme(),
-      themeMode: state.isLightTheme ? ThemeMode.light : ThemeMode.dark,
+      themeMode: state.getCurentTheme,
       debugShowCheckedModeBanner: false,
       home: child,
     );

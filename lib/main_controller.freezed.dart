@@ -166,6 +166,7 @@ abstract class UpdateTheme implements MainEvent {
 /// @nodoc
 mixin _$MainState {
   bool get isLightTheme => throw _privateConstructorUsedError;
+  ThemeMode? get getCurentTheme => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MainStateCopyWith<MainState> get copyWith =>
@@ -177,7 +178,7 @@ abstract class $MainStateCopyWith<$Res> {
   factory $MainStateCopyWith(MainState value, $Res Function(MainState) then) =
       _$MainStateCopyWithImpl<$Res, MainState>;
   @useResult
-  $Res call({bool isLightTheme});
+  $Res call({bool isLightTheme, ThemeMode? getCurentTheme});
 }
 
 /// @nodoc
@@ -194,12 +195,17 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
   @override
   $Res call({
     Object? isLightTheme = null,
+    Object? getCurentTheme = freezed,
   }) {
     return _then(_value.copyWith(
       isLightTheme: null == isLightTheme
           ? _value.isLightTheme
           : isLightTheme // ignore: cast_nullable_to_non_nullable
               as bool,
+      getCurentTheme: freezed == getCurentTheme
+          ? _value.getCurentTheme
+          : getCurentTheme // ignore: cast_nullable_to_non_nullable
+              as ThemeMode?,
     ) as $Val);
   }
 }
@@ -212,7 +218,7 @@ abstract class _$$MainStateImplCopyWith<$Res>
       __$$MainStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLightTheme});
+  $Res call({bool isLightTheme, ThemeMode? getCurentTheme});
 }
 
 /// @nodoc
@@ -227,12 +233,17 @@ class __$$MainStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLightTheme = null,
+    Object? getCurentTheme = freezed,
   }) {
     return _then(_$MainStateImpl(
       isLightTheme: null == isLightTheme
           ? _value.isLightTheme
           : isLightTheme // ignore: cast_nullable_to_non_nullable
               as bool,
+      getCurentTheme: freezed == getCurentTheme
+          ? _value.getCurentTheme
+          : getCurentTheme // ignore: cast_nullable_to_non_nullable
+              as ThemeMode?,
     ));
   }
 }
@@ -240,14 +251,16 @@ class __$$MainStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$MainStateImpl implements _MainState {
-  const _$MainStateImpl({required this.isLightTheme});
+  const _$MainStateImpl({required this.isLightTheme, this.getCurentTheme});
 
   @override
   final bool isLightTheme;
+  @override
+  final ThemeMode? getCurentTheme;
 
   @override
   String toString() {
-    return 'MainState(isLightTheme: $isLightTheme)';
+    return 'MainState(isLightTheme: $isLightTheme, getCurentTheme: $getCurentTheme)';
   }
 
   @override
@@ -256,11 +269,13 @@ class _$MainStateImpl implements _MainState {
         (other.runtimeType == runtimeType &&
             other is _$MainStateImpl &&
             (identical(other.isLightTheme, isLightTheme) ||
-                other.isLightTheme == isLightTheme));
+                other.isLightTheme == isLightTheme) &&
+            (identical(other.getCurentTheme, getCurentTheme) ||
+                other.getCurentTheme == getCurentTheme));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLightTheme);
+  int get hashCode => Object.hash(runtimeType, isLightTheme, getCurentTheme);
 
   @JsonKey(ignore: true)
   @override
@@ -270,11 +285,14 @@ class _$MainStateImpl implements _MainState {
 }
 
 abstract class _MainState implements MainState {
-  const factory _MainState({required final bool isLightTheme}) =
-      _$MainStateImpl;
+  const factory _MainState(
+      {required final bool isLightTheme,
+      final ThemeMode? getCurentTheme}) = _$MainStateImpl;
 
   @override
   bool get isLightTheme;
+  @override
+  ThemeMode? get getCurentTheme;
   @override
   @JsonKey(ignore: true)
   _$$MainStateImplCopyWith<_$MainStateImpl> get copyWith =>

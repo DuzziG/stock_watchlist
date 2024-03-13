@@ -18,6 +18,7 @@ sealed class MainEvent with _$MainEvent {
 sealed class MainState with _$MainState {
   const factory MainState({
     required bool isLightTheme,
+    ThemeMode? getCurentTheme,
   }) = _MainState;
 }
 
@@ -39,6 +40,7 @@ class MainController extends _$MainController {
 
   _onThemeChanged() {
     final themeMode = ref.read(localRepositoryProvider).getThemeMode();
+    state = state.copyWith(getCurentTheme: themeMode);
     // ignore: unused_local_variable
     final isLightTheme = switch (themeMode) {
       ThemeMode.system => PlatformDispatcher.instance.platformBrightness == Brightness.light,
