@@ -103,6 +103,7 @@ class _NavBarSection extends StatelessWidget {
               onPressed: () => showModalBottomSheet(
                 context: context,
                 builder: (_) => const SettingsSheet(),
+                isScrollControlled: true,
                 useSafeArea: true,
                 showDragHandle: true,
               ),

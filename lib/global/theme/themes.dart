@@ -6,7 +6,8 @@ import 'texts.dart';
 final accentColor = SystemTheme.accentColor.accent;
 
 ThemeData getLightTheme() => ThemeData(
-      useMaterial3: false,
+      scaffoldBackgroundColor: const Color(0xffefeeee),
+      useMaterial3: true,
       colorScheme: const ColorScheme.light(
         brightness: Brightness.dark,
         background: Color(0xffefeeee),
@@ -19,7 +20,8 @@ ThemeData getLightTheme() => ThemeData(
     );
 
 ThemeData getDarkTheme() => ThemeData(
-      useMaterial3: false,
+      scaffoldBackgroundColor: const Color(0xff392f41),
+      useMaterial3: true,
       colorScheme: const ColorScheme.dark(
         brightness: Brightness.dark,
         background: Color(0xff392f41),

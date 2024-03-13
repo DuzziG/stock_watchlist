@@ -39,19 +39,12 @@ class WatchlistTile extends StatelessWidget {
         motion: const ScrollMotion(),
         children: [
           SlidableAction(
-            // An action can be bigger than the others.
-            flex: 2,
+            flex: 1,
             onPressed: (context) => onTapDelete?.call(),
             backgroundColor: context.colors.background,
             foregroundColor: context.colors.errorContainer,
             icon: Icons.delete_outline,
             label: 'Delete',
-          ),
-          SlidableAction(
-            onPressed: (context) => onTapRefresh?.call(),
-            backgroundColor: context.colors.background,
-            icon: Icons.refresh_outlined,
-            label: 'Refresh',
           ),
         ],
       ),
