@@ -49,7 +49,7 @@ class AlphaVantageTickerDataRepository extends TickerDataRepository {
       final volumeKey = keys.firstWhere((key) => key.contains("volume"));
 
       return TickerResult(
-        ticker: ticker,
+        ticker: ticker ?? '',
         open: lastCandle[openKey],
         close: lastCandle[closeKey],
         high: lastCandle[highKey],
