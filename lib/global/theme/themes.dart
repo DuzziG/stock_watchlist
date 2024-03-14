@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:system_theme/system_theme.dart';
 
 import 'texts.dart';
-
-final accentColor = SystemTheme.accentColor.accent;
 
 ThemeData getLightTheme() => ThemeData(
       scaffoldBackgroundColor: const Color(0xffefeeee),
