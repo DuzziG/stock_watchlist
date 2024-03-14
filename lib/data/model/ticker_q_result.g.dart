@@ -11,7 +11,7 @@ _$TickerQResultImpl _$$TickerQResultImplFromJson(Map<String, dynamic> json) =>
       ticker: json['ticker'] as String,
       bidPrice: json['bidPrice'] as String?,
       askPrice: json['askPrice'] as String?,
-      currentPrice: json['currentPrice'] as String?,
+      currentPrice: (json['currentPrice'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$TickerQResultImplToJson(_$TickerQResultImpl instance) =>

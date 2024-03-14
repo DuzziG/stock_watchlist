@@ -7,7 +7,7 @@ part 'ticker_t_result.g.dart';
 class TickerTResult with _$TickerTResult {
   const factory TickerTResult({
     required String ticker,
-    String? currentPrice,
+    String? lastTrade,
   }) = _TickerTResult;
 
   const TickerTResult._();

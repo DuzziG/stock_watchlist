@@ -21,7 +21,7 @@ TickerTResult _$TickerTResultFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TickerTResult {
   String get ticker => throw _privateConstructorUsedError;
-  String? get currentPrice => throw _privateConstructorUsedError;
+  String? get lastTrade => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $TickerTResultCopyWith<$Res> {
           TickerTResult value, $Res Function(TickerTResult) then) =
       _$TickerTResultCopyWithImpl<$Res, TickerTResult>;
   @useResult
-  $Res call({String ticker, String? currentPrice});
+  $Res call({String ticker, String? lastTrade});
 }
 
 /// @nodoc
@@ -52,16 +52,16 @@ class _$TickerTResultCopyWithImpl<$Res, $Val extends TickerTResult>
   @override
   $Res call({
     Object? ticker = null,
-    Object? currentPrice = freezed,
+    Object? lastTrade = freezed,
   }) {
     return _then(_value.copyWith(
       ticker: null == ticker
           ? _value.ticker
           : ticker // ignore: cast_nullable_to_non_nullable
               as String,
-      currentPrice: freezed == currentPrice
-          ? _value.currentPrice
-          : currentPrice // ignore: cast_nullable_to_non_nullable
+      lastTrade: freezed == lastTrade
+          ? _value.lastTrade
+          : lastTrade // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -75,7 +75,7 @@ abstract class _$$TickerTResultImplCopyWith<$Res>
       __$$TickerTResultImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String ticker, String? currentPrice});
+  $Res call({String ticker, String? lastTrade});
 }
 
 /// @nodoc
@@ -90,16 +90,16 @@ class __$$TickerTResultImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? ticker = null,
-    Object? currentPrice = freezed,
+    Object? lastTrade = freezed,
   }) {
     return _then(_$TickerTResultImpl(
       ticker: null == ticker
           ? _value.ticker
           : ticker // ignore: cast_nullable_to_non_nullable
               as String,
-      currentPrice: freezed == currentPrice
-          ? _value.currentPrice
-          : currentPrice // ignore: cast_nullable_to_non_nullable
+      lastTrade: freezed == lastTrade
+          ? _value.lastTrade
+          : lastTrade // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -108,8 +108,7 @@ class __$$TickerTResultImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TickerTResultImpl extends _TickerTResult {
-  const _$TickerTResultImpl({required this.ticker, this.currentPrice})
-      : super._();
+  const _$TickerTResultImpl({required this.ticker, this.lastTrade}) : super._();
 
   factory _$TickerTResultImpl.fromJson(Map<String, dynamic> json) =>
       _$$TickerTResultImplFromJson(json);
@@ -117,11 +116,11 @@ class _$TickerTResultImpl extends _TickerTResult {
   @override
   final String ticker;
   @override
-  final String? currentPrice;
+  final String? lastTrade;
 
   @override
   String toString() {
-    return 'TickerTResult(ticker: $ticker, currentPrice: $currentPrice)';
+    return 'TickerTResult(ticker: $ticker, lastTrade: $lastTrade)';
   }
 
   @override
@@ -130,13 +129,13 @@ class _$TickerTResultImpl extends _TickerTResult {
         (other.runtimeType == runtimeType &&
             other is _$TickerTResultImpl &&
             (identical(other.ticker, ticker) || other.ticker == ticker) &&
-            (identical(other.currentPrice, currentPrice) ||
-                other.currentPrice == currentPrice));
+            (identical(other.lastTrade, lastTrade) ||
+                other.lastTrade == lastTrade));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, ticker, currentPrice);
+  int get hashCode => Object.hash(runtimeType, ticker, lastTrade);
 
   @JsonKey(ignore: true)
   @override
@@ -155,7 +154,7 @@ class _$TickerTResultImpl extends _TickerTResult {
 abstract class _TickerTResult extends TickerTResult {
   const factory _TickerTResult(
       {required final String ticker,
-      final String? currentPrice}) = _$TickerTResultImpl;
+      final String? lastTrade}) = _$TickerTResultImpl;
   const _TickerTResult._() : super._();
 
   factory _TickerTResult.fromJson(Map<String, dynamic> json) =
@@ -164,7 +163,7 @@ abstract class _TickerTResult extends TickerTResult {
   @override
   String get ticker;
   @override
-  String? get currentPrice;
+  String? get lastTrade;
   @override
   @JsonKey(ignore: true)
   _$$TickerTResultImplCopyWith<_$TickerTResultImpl> get copyWith =>

@@ -9,7 +9,7 @@ class TickerQResult with _$TickerQResult {
     required String ticker,
     String? bidPrice,
     String? askPrice,
-    String? currentPrice,
+    double? currentPrice,
   }) = _TickerQResult;
 
   const TickerQResult._();

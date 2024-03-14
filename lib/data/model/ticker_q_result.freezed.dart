@@ -23,7 +23,7 @@ mixin _$TickerQResult {
   String get ticker => throw _privateConstructorUsedError;
   String? get bidPrice => throw _privateConstructorUsedError;
   String? get askPrice => throw _privateConstructorUsedError;
-  String? get currentPrice => throw _privateConstructorUsedError;
+  double? get currentPrice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,7 +41,7 @@ abstract class $TickerQResultCopyWith<$Res> {
       {String ticker,
       String? bidPrice,
       String? askPrice,
-      String? currentPrice});
+      double? currentPrice});
 }
 
 /// @nodoc
@@ -78,7 +78,7 @@ class _$TickerQResultCopyWithImpl<$Res, $Val extends TickerQResult>
       currentPrice: freezed == currentPrice
           ? _value.currentPrice
           : currentPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as double?,
     ) as $Val);
   }
 }
@@ -95,7 +95,7 @@ abstract class _$$TickerQResultImplCopyWith<$Res>
       {String ticker,
       String? bidPrice,
       String? askPrice,
-      String? currentPrice});
+      double? currentPrice});
 }
 
 /// @nodoc
@@ -130,7 +130,7 @@ class __$$TickerQResultImplCopyWithImpl<$Res>
       currentPrice: freezed == currentPrice
           ? _value.currentPrice
           : currentPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as double?,
     ));
   }
 }
@@ -152,7 +152,7 @@ class _$TickerQResultImpl extends _TickerQResult {
   @override
   final String? askPrice;
   @override
-  final String? currentPrice;
+  final double? currentPrice;
 
   @override
   String toString() {
@@ -197,7 +197,7 @@ abstract class _TickerQResult extends TickerQResult {
       {required final String ticker,
       final String? bidPrice,
       final String? askPrice,
-      final String? currentPrice}) = _$TickerQResultImpl;
+      final double? currentPrice}) = _$TickerQResultImpl;
   const _TickerQResult._() : super._();
 
   factory _TickerQResult.fromJson(Map<String, dynamic> json) =
@@ -210,7 +210,7 @@ abstract class _TickerQResult extends TickerQResult {
   @override
   String? get askPrice;
   @override
-  String? get currentPrice;
+  double? get currentPrice;
   @override
   @JsonKey(ignore: true)
   _$$TickerQResultImplCopyWith<_$TickerQResultImpl> get copyWith =>
