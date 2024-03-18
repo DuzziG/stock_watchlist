@@ -12,3 +12,5 @@ const ACTION_TYPE_ORDERBOOKS = "orderbooks";
 
 const KEY_AUTHENTICATION = 'key_authentication';
 const KEY_THEME_MODE = 'theme_mode';
+
+const FILTER_NAME = 'name';

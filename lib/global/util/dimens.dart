@@ -34,21 +34,23 @@ const INSETS_HORIZONTAL_8 = EdgeInsets.symmetric(horizontal: 8.0);
 
 const INSETS_HORIZONTAL_16 = EdgeInsets.symmetric(horizontal: 16.0);
 
+const INSETS_HORIZONTAL_24 = EdgeInsets.symmetric(horizontal: 24.0);
+
 const INSETS_VERTICAL_8 = EdgeInsets.symmetric(vertical: 8.0);
 
 const INSETS_VERTICAL_16 = EdgeInsets.symmetric(vertical: 16.0);
 
-const OFFSET_2 = Offset(2, 2);
+const OPACITY_GLASS = 0.1;
 
-const OFFSET_4 = Offset(4, 4);
+const OPACITY_TILE = 0.3;
 
-const OFFSET_6 = Offset(6, 6);
+const OPACITY_DIVIDER = 0.8;
 
-const OFFSET_8 = Offset(8, 8);
-
-const CARD_RADIUS = 24.0;
+const CARD_RADIUS = 16.0;
 
 const DOUBLE_0 = 0.0;
+
+const DOUBLE_2 = 2.0;
 
 const DOUBLE_4 = 4.0;
 
@@ -58,10 +60,12 @@ const DOUBLE_12 = 12.0;
 
 const DOUBLE_16 = 16.0;
 
+const DOUBLE_24 = 24.0;
+
+const DOUBLE_32 = 32.0;
+
 const DOUBLE_60 = 60.0;
 
 const DOUBLE_80 = 80.0;
 
 const DOUBLE_120 = 120.0;
-
-const DOUBLE_160 = 160.0;

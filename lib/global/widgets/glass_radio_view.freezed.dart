@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'neumorphic_radio_view.dart';
+part of 'glass_radio_view.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,31 +15,30 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$NeumorphicRadioData<T> {
+mixin _$GlassRadioData<T> {
   String get text => throw _privateConstructorUsedError;
   T get value => throw _privateConstructorUsedError;
   IconData get icon => throw _privateConstructorUsedError;
   bool get selected => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $NeumorphicRadioDataCopyWith<T, NeumorphicRadioData<T>> get copyWith =>
+  $GlassRadioDataCopyWith<T, GlassRadioData<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NeumorphicRadioDataCopyWith<T, $Res> {
-  factory $NeumorphicRadioDataCopyWith(NeumorphicRadioData<T> value,
-          $Res Function(NeumorphicRadioData<T>) then) =
-      _$NeumorphicRadioDataCopyWithImpl<T, $Res, NeumorphicRadioData<T>>;
+abstract class $GlassRadioDataCopyWith<T, $Res> {
+  factory $GlassRadioDataCopyWith(
+          GlassRadioData<T> value, $Res Function(GlassRadioData<T>) then) =
+      _$GlassRadioDataCopyWithImpl<T, $Res, GlassRadioData<T>>;
   @useResult
   $Res call({String text, T value, IconData icon, bool selected});
 }
 
 /// @nodoc
-class _$NeumorphicRadioDataCopyWithImpl<T, $Res,
-        $Val extends NeumorphicRadioData<T>>
-    implements $NeumorphicRadioDataCopyWith<T, $Res> {
-  _$NeumorphicRadioDataCopyWithImpl(this._value, this._then);
+class _$GlassRadioDataCopyWithImpl<T, $Res, $Val extends GlassRadioData<T>>
+    implements $GlassRadioDataCopyWith<T, $Res> {
+  _$GlassRadioDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -76,23 +75,22 @@ class _$NeumorphicRadioDataCopyWithImpl<T, $Res,
 }
 
 /// @nodoc
-abstract class _$$NeumorphicRadioDataImplCopyWith<T, $Res>
-    implements $NeumorphicRadioDataCopyWith<T, $Res> {
-  factory _$$NeumorphicRadioDataImplCopyWith(_$NeumorphicRadioDataImpl<T> value,
-          $Res Function(_$NeumorphicRadioDataImpl<T>) then) =
-      __$$NeumorphicRadioDataImplCopyWithImpl<T, $Res>;
+abstract class _$$GlassRadioDataImplCopyWith<T, $Res>
+    implements $GlassRadioDataCopyWith<T, $Res> {
+  factory _$$GlassRadioDataImplCopyWith(_$GlassRadioDataImpl<T> value,
+          $Res Function(_$GlassRadioDataImpl<T>) then) =
+      __$$GlassRadioDataImplCopyWithImpl<T, $Res>;
   @override
   @useResult
   $Res call({String text, T value, IconData icon, bool selected});
 }
 
 /// @nodoc
-class __$$NeumorphicRadioDataImplCopyWithImpl<T, $Res>
-    extends _$NeumorphicRadioDataCopyWithImpl<T, $Res,
-        _$NeumorphicRadioDataImpl<T>>
-    implements _$$NeumorphicRadioDataImplCopyWith<T, $Res> {
-  __$$NeumorphicRadioDataImplCopyWithImpl(_$NeumorphicRadioDataImpl<T> _value,
-      $Res Function(_$NeumorphicRadioDataImpl<T>) _then)
+class __$$GlassRadioDataImplCopyWithImpl<T, $Res>
+    extends _$GlassRadioDataCopyWithImpl<T, $Res, _$GlassRadioDataImpl<T>>
+    implements _$$GlassRadioDataImplCopyWith<T, $Res> {
+  __$$GlassRadioDataImplCopyWithImpl(_$GlassRadioDataImpl<T> _value,
+      $Res Function(_$GlassRadioDataImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -103,7 +101,7 @@ class __$$NeumorphicRadioDataImplCopyWithImpl<T, $Res>
     Object? icon = null,
     Object? selected = null,
   }) {
-    return _then(_$NeumorphicRadioDataImpl<T>(
+    return _then(_$GlassRadioDataImpl<T>(
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -126,8 +124,8 @@ class __$$NeumorphicRadioDataImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$NeumorphicRadioDataImpl<T> extends _NeumorphicRadioData<T> {
-  const _$NeumorphicRadioDataImpl(
+class _$GlassRadioDataImpl<T> extends _GlassRadioData<T> {
+  const _$GlassRadioDataImpl(
       {required this.text,
       required this.value,
       required this.icon,
@@ -145,14 +143,14 @@ class _$NeumorphicRadioDataImpl<T> extends _NeumorphicRadioData<T> {
 
   @override
   String toString() {
-    return 'NeumorphicRadioData<$T>(text: $text, value: $value, icon: $icon, selected: $selected)';
+    return 'GlassRadioData<$T>(text: $text, value: $value, icon: $icon, selected: $selected)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NeumorphicRadioDataImpl<T> &&
+            other is _$GlassRadioDataImpl<T> &&
             (identical(other.text, text) || other.text == text) &&
             const DeepCollectionEquality().equals(other.value, value) &&
             (identical(other.icon, icon) || other.icon == icon) &&
@@ -167,18 +165,18 @@ class _$NeumorphicRadioDataImpl<T> extends _NeumorphicRadioData<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$NeumorphicRadioDataImplCopyWith<T, _$NeumorphicRadioDataImpl<T>>
-      get copyWith => __$$NeumorphicRadioDataImplCopyWithImpl<T,
-          _$NeumorphicRadioDataImpl<T>>(this, _$identity);
+  _$$GlassRadioDataImplCopyWith<T, _$GlassRadioDataImpl<T>> get copyWith =>
+      __$$GlassRadioDataImplCopyWithImpl<T, _$GlassRadioDataImpl<T>>(
+          this, _$identity);
 }
 
-abstract class _NeumorphicRadioData<T> extends NeumorphicRadioData<T> {
-  const factory _NeumorphicRadioData(
+abstract class _GlassRadioData<T> extends GlassRadioData<T> {
+  const factory _GlassRadioData(
       {required final String text,
       required final T value,
       required final IconData icon,
-      required final bool selected}) = _$NeumorphicRadioDataImpl<T>;
-  const _NeumorphicRadioData._() : super._();
+      required final bool selected}) = _$GlassRadioDataImpl<T>;
+  const _GlassRadioData._() : super._();
 
   @override
   String get text;
@@ -190,6 +188,6 @@ abstract class _NeumorphicRadioData<T> extends NeumorphicRadioData<T> {
   bool get selected;
   @override
   @JsonKey(ignore: true)
-  _$$NeumorphicRadioDataImplCopyWith<T, _$NeumorphicRadioDataImpl<T>>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GlassRadioDataImplCopyWith<T, _$GlassRadioDataImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

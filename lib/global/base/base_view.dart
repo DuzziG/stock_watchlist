@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../global/di/navigation_providers.dart';
-import '../../watchlist/watchlist_view.dart';
+import '../../views/watchlist_view.dart';
 import '../ext/context_extensions.dart';
 
 class BaseView extends ConsumerWidget {
