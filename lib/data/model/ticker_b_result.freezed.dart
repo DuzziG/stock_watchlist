@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'ticker_result.dart';
+part of 'ticker_b_result.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -21,10 +21,6 @@ TickerResult _$TickerResultFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TickerResult {
   String get ticker => throw _privateConstructorUsedError;
-  String? get bidPrice => throw _privateConstructorUsedError;
-  String? get askPrice => throw _privateConstructorUsedError;
-  String? get currentPrice => throw _privateConstructorUsedError;
-  String? get lastTrade => throw _privateConstructorUsedError;
   String? get open => throw _privateConstructorUsedError;
   String? get close => throw _privateConstructorUsedError;
   String? get high => throw _privateConstructorUsedError;
@@ -45,10 +41,6 @@ abstract class $TickerResultCopyWith<$Res> {
   @useResult
   $Res call(
       {String ticker,
-      String? bidPrice,
-      String? askPrice,
-      String? currentPrice,
-      String? lastTrade,
       String? open,
       String? close,
       String? high,
@@ -70,10 +62,6 @@ class _$TickerResultCopyWithImpl<$Res, $Val extends TickerResult>
   @override
   $Res call({
     Object? ticker = null,
-    Object? bidPrice = freezed,
-    Object? askPrice = freezed,
-    Object? currentPrice = freezed,
-    Object? lastTrade = freezed,
     Object? open = freezed,
     Object? close = freezed,
     Object? high = freezed,
@@ -85,22 +73,6 @@ class _$TickerResultCopyWithImpl<$Res, $Val extends TickerResult>
           ? _value.ticker
           : ticker // ignore: cast_nullable_to_non_nullable
               as String,
-      bidPrice: freezed == bidPrice
-          ? _value.bidPrice
-          : bidPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
-      askPrice: freezed == askPrice
-          ? _value.askPrice
-          : askPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
-      currentPrice: freezed == currentPrice
-          ? _value.currentPrice
-          : currentPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastTrade: freezed == lastTrade
-          ? _value.lastTrade
-          : lastTrade // ignore: cast_nullable_to_non_nullable
-              as String?,
       open: freezed == open
           ? _value.open
           : open // ignore: cast_nullable_to_non_nullable
@@ -135,10 +107,6 @@ abstract class _$$TickerResultImplCopyWith<$Res>
   @useResult
   $Res call(
       {String ticker,
-      String? bidPrice,
-      String? askPrice,
-      String? currentPrice,
-      String? lastTrade,
       String? open,
       String? close,
       String? high,
@@ -158,10 +126,6 @@ class __$$TickerResultImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? ticker = null,
-    Object? bidPrice = freezed,
-    Object? askPrice = freezed,
-    Object? currentPrice = freezed,
-    Object? lastTrade = freezed,
     Object? open = freezed,
     Object? close = freezed,
     Object? high = freezed,
@@ -173,22 +137,6 @@ class __$$TickerResultImplCopyWithImpl<$Res>
           ? _value.ticker
           : ticker // ignore: cast_nullable_to_non_nullable
               as String,
-      bidPrice: freezed == bidPrice
-          ? _value.bidPrice
-          : bidPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
-      askPrice: freezed == askPrice
-          ? _value.askPrice
-          : askPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
-      currentPrice: freezed == currentPrice
-          ? _value.currentPrice
-          : currentPrice // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastTrade: freezed == lastTrade
-          ? _value.lastTrade
-          : lastTrade // ignore: cast_nullable_to_non_nullable
-              as String?,
       open: freezed == open
           ? _value.open
           : open // ignore: cast_nullable_to_non_nullable
@@ -218,10 +166,6 @@ class __$$TickerResultImplCopyWithImpl<$Res>
 class _$TickerResultImpl extends _TickerResult {
   const _$TickerResultImpl(
       {required this.ticker,
-      this.bidPrice,
-      this.askPrice,
-      this.currentPrice,
-      this.lastTrade,
       this.open,
       this.close,
       this.high,
@@ -235,14 +179,6 @@ class _$TickerResultImpl extends _TickerResult {
   @override
   final String ticker;
   @override
-  final String? bidPrice;
-  @override
-  final String? askPrice;
-  @override
-  final String? currentPrice;
-  @override
-  final String? lastTrade;
-  @override
   final String? open;
   @override
   final String? close;
@@ -255,7 +191,7 @@ class _$TickerResultImpl extends _TickerResult {
 
   @override
   String toString() {
-    return 'TickerResult(ticker: $ticker, bidPrice: $bidPrice, askPrice: $askPrice, currentPrice: $currentPrice, lastTrade: $lastTrade, open: $open, close: $close, high: $high, low: $low, volume: $volume)';
+    return 'TickerResult(ticker: $ticker, open: $open, close: $close, high: $high, low: $low, volume: $volume)';
   }
 
   @override
@@ -264,14 +200,6 @@ class _$TickerResultImpl extends _TickerResult {
         (other.runtimeType == runtimeType &&
             other is _$TickerResultImpl &&
             (identical(other.ticker, ticker) || other.ticker == ticker) &&
-            (identical(other.bidPrice, bidPrice) ||
-                other.bidPrice == bidPrice) &&
-            (identical(other.askPrice, askPrice) ||
-                other.askPrice == askPrice) &&
-            (identical(other.currentPrice, currentPrice) ||
-                other.currentPrice == currentPrice) &&
-            (identical(other.lastTrade, lastTrade) ||
-                other.lastTrade == lastTrade) &&
             (identical(other.open, open) || other.open == open) &&
             (identical(other.close, close) || other.close == close) &&
             (identical(other.high, high) || other.high == high) &&
@@ -281,8 +209,8 @@ class _$TickerResultImpl extends _TickerResult {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, ticker, bidPrice, askPrice,
-      currentPrice, lastTrade, open, close, high, low, volume);
+  int get hashCode =>
+      Object.hash(runtimeType, ticker, open, close, high, low, volume);
 
   @JsonKey(ignore: true)
   @override
@@ -301,10 +229,6 @@ class _$TickerResultImpl extends _TickerResult {
 abstract class _TickerResult extends TickerResult {
   const factory _TickerResult(
       {required final String ticker,
-      final String? bidPrice,
-      final String? askPrice,
-      final String? currentPrice,
-      final String? lastTrade,
       final String? open,
       final String? close,
       final String? high,
@@ -317,14 +241,6 @@ abstract class _TickerResult extends TickerResult {
 
   @override
   String get ticker;
-  @override
-  String? get bidPrice;
-  @override
-  String? get askPrice;
-  @override
-  String? get currentPrice;
-  @override
-  String? get lastTrade;
   @override
   String? get open;
   @override

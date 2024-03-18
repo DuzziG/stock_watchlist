@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ticker_result.dart';
+part of 'ticker_b_result.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -9,10 +9,6 @@ part of 'ticker_result.dart';
 _$TickerResultImpl _$$TickerResultImplFromJson(Map<String, dynamic> json) =>
     _$TickerResultImpl(
       ticker: json['ticker'] as String,
-      bidPrice: json['bidPrice'] as String?,
-      askPrice: json['askPrice'] as String?,
-      currentPrice: json['currentPrice'] as String?,
-      lastTrade: json['lastTrade'] as String?,
       open: json['open'] as String?,
       close: json['close'] as String?,
       high: json['high'] as String?,
@@ -23,10 +19,6 @@ _$TickerResultImpl _$$TickerResultImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$TickerResultImplToJson(_$TickerResultImpl instance) =>
     <String, dynamic>{
       'ticker': instance.ticker,
-      'bidPrice': instance.bidPrice,
-      'askPrice': instance.askPrice,
-      'currentPrice': instance.currentPrice,
-      'lastTrade': instance.lastTrade,
       'open': instance.open,
       'close': instance.close,
       'high': instance.high,

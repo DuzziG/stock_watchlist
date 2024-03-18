@@ -17,3 +17,6 @@ Localstore localStore(LocalStoreRef ref) => Localstore.instance;
 
 @Riverpod(keepAlive: true)
 Future<SharedPreferences> sharedPreferences(SharedPreferencesRef ref) => SharedPreferences.getInstance();
+
+@Riverpod(keepAlive: true)
+Future<List<String>> localTickers(LocalTickersRef ref) => ref.read(localRepositoryProvider).getTickers();

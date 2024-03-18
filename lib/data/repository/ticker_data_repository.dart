@@ -3,7 +3,7 @@
 import 'dart:developer' as console;
 
 import 'package:dio/dio.dart';
-import 'package:stock_watchlist/data/model/ticker_result.dart';
+import 'package:stock_watchlist/data/model/ticker_b_result.dart';
 
 import '../../global/util/env.dart';
 
