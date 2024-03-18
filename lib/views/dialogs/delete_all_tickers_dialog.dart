@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stock_watchlist/global/ext/context_extensions.dart';
-import 'package:stock_watchlist/global/util/dimens.dart';
-import 'package:stock_watchlist/watchlist/watchlist_controller.dart';
+
+import '../../global/util/dimens.dart';
+import '../watchlist_controller.dart';
 
 class DeleteAllTickersDialog extends ConsumerWidget {
   const DeleteAllTickersDialog({super.key});

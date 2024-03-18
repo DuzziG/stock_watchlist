@@ -1,27 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'watchlist_controller.dart';
+part of 'add_ticker_controller.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$watchlistControllerHash() =>
-    r'4aade2cb369c541a422f28a8e48e04e0c211a963';
+String _$addTickerControllerHash() =>
+    r'a70f7275b1ba3727e056cf07406b1f836311034e';
 
-/// See also [WatchlistController].
-@ProviderFor(WatchlistController)
-final watchlistControllerProvider =
-    AutoDisposeNotifierProvider<WatchlistController, WatchlistState>.internal(
-  WatchlistController.new,
-  name: r'watchlistControllerProvider',
+/// See also [AddTickerController].
+@ProviderFor(AddTickerController)
+final addTickerControllerProvider =
+    AutoDisposeNotifierProvider<AddTickerController, AddTickerState>.internal(
+  AddTickerController.new,
+  name: r'addTickerControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$watchlistControllerHash,
+      : _$addTickerControllerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$WatchlistController = AutoDisposeNotifier<WatchlistState>;
+typedef _$AddTickerController = AutoDisposeNotifier<AddTickerState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package

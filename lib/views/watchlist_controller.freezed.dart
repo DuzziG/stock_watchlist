@@ -18,30 +18,36 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$WatchlistEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
     required TResult Function() removeAllTickers,
+    required TResult Function() closeConnection,
+    required TResult Function() restartConnection,
+    required TResult Function() reloadData,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
     TResult? Function()? removeAllTickers,
+    TResult? Function()? closeConnection,
+    TResult? Function()? restartConnection,
+    TResult? Function()? reloadData,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
     TResult Function()? removeAllTickers,
+    TResult Function()? closeConnection,
+    TResult Function()? restartConnection,
+    TResult Function()? reloadData,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -49,30 +55,36 @@ mixin _$WatchlistEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
     required TResult Function(RemoveAllTickers value) removeAllTickers,
+    required TResult Function(CloseConnection value) closeConnection,
+    required TResult Function(StartConnection value) restartConnection,
+    required TResult Function(ReloadData value) reloadData,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
     TResult? Function(RemoveAllTickers value)? removeAllTickers,
+    TResult? Function(CloseConnection value)? closeConnection,
+    TResult? Function(StartConnection value)? restartConnection,
+    TResult? Function(ReloadData value)? reloadData,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
     TResult Function(RemoveAllTickers value)? removeAllTickers,
+    TResult Function(CloseConnection value)? closeConnection,
+    TResult Function(StartConnection value)? restartConnection,
+    TResult Function(ReloadData value)? reloadData,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),
@@ -96,163 +108,6 @@ class _$WatchlistEventCopyWithImpl<$Res, $Val extends WatchlistEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$InputChangedImplCopyWith<$Res> {
-  factory _$$InputChangedImplCopyWith(
-          _$InputChangedImpl value, $Res Function(_$InputChangedImpl) then) =
-      __$$InputChangedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String value});
-}
-
-/// @nodoc
-class __$$InputChangedImplCopyWithImpl<$Res>
-    extends _$WatchlistEventCopyWithImpl<$Res, _$InputChangedImpl>
-    implements _$$InputChangedImplCopyWith<$Res> {
-  __$$InputChangedImplCopyWithImpl(
-      _$InputChangedImpl _value, $Res Function(_$InputChangedImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? value = null,
-  }) {
-    return _then(_$InputChangedImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$InputChangedImpl implements InputChanged {
-  const _$InputChangedImpl(this.value);
-
-  @override
-  final String value;
-
-  @override
-  String toString() {
-    return 'WatchlistEvent.inputChanged(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InputChangedImpl &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, value);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InputChangedImplCopyWith<_$InputChangedImpl> get copyWith =>
-      __$$InputChangedImplCopyWithImpl<_$InputChangedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String value) inputChanged,
-    required TResult Function(String ticker) addTicker,
-    required TResult Function(String ticker) removeTicker,
-    required TResult Function() removeAllTickers,
-    required TResult Function() dismissDialog,
-    required TResult Function(ThemeMode themeMode) changeTheme,
-  }) {
-    return inputChanged(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? inputChanged,
-    TResult? Function(String ticker)? addTicker,
-    TResult? Function(String ticker)? removeTicker,
-    TResult? Function()? removeAllTickers,
-    TResult? Function()? dismissDialog,
-    TResult? Function(ThemeMode themeMode)? changeTheme,
-  }) {
-    return inputChanged?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? inputChanged,
-    TResult Function(String ticker)? addTicker,
-    TResult Function(String ticker)? removeTicker,
-    TResult Function()? removeAllTickers,
-    TResult Function()? dismissDialog,
-    TResult Function(ThemeMode themeMode)? changeTheme,
-    required TResult orElse(),
-  }) {
-    if (inputChanged != null) {
-      return inputChanged(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(InputChanged value) inputChanged,
-    required TResult Function(AddTicker value) addTicker,
-    required TResult Function(RemoveTicker value) removeTicker,
-    required TResult Function(RemoveAllTickers value) removeAllTickers,
-    required TResult Function(DismissDialog value) dismissDialog,
-    required TResult Function(ChangeTheme value) changeTheme,
-  }) {
-    return inputChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InputChanged value)? inputChanged,
-    TResult? Function(AddTicker value)? addTicker,
-    TResult? Function(RemoveTicker value)? removeTicker,
-    TResult? Function(RemoveAllTickers value)? removeAllTickers,
-    TResult? Function(DismissDialog value)? dismissDialog,
-    TResult? Function(ChangeTheme value)? changeTheme,
-  }) {
-    return inputChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InputChanged value)? inputChanged,
-    TResult Function(AddTicker value)? addTicker,
-    TResult Function(RemoveTicker value)? removeTicker,
-    TResult Function(RemoveAllTickers value)? removeAllTickers,
-    TResult Function(DismissDialog value)? dismissDialog,
-    TResult Function(ChangeTheme value)? changeTheme,
-    required TResult orElse(),
-  }) {
-    if (inputChanged != null) {
-      return inputChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class InputChanged implements WatchlistEvent {
-  const factory InputChanged(final String value) = _$InputChangedImpl;
-
-  String get value;
-  @JsonKey(ignore: true)
-  _$$InputChangedImplCopyWith<_$InputChangedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -319,10 +174,12 @@ class _$AddTickerImpl implements AddTicker {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
     required TResult Function() removeAllTickers,
+    required TResult Function() closeConnection,
+    required TResult Function() restartConnection,
+    required TResult Function() reloadData,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) {
@@ -332,10 +189,12 @@ class _$AddTickerImpl implements AddTicker {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
     TResult? Function()? removeAllTickers,
+    TResult? Function()? closeConnection,
+    TResult? Function()? restartConnection,
+    TResult? Function()? reloadData,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) {
@@ -345,10 +204,12 @@ class _$AddTickerImpl implements AddTicker {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
     TResult Function()? removeAllTickers,
+    TResult Function()? closeConnection,
+    TResult Function()? restartConnection,
+    TResult Function()? reloadData,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -362,10 +223,12 @@ class _$AddTickerImpl implements AddTicker {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
     required TResult Function(RemoveAllTickers value) removeAllTickers,
+    required TResult Function(CloseConnection value) closeConnection,
+    required TResult Function(StartConnection value) restartConnection,
+    required TResult Function(ReloadData value) reloadData,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) {
@@ -375,10 +238,12 @@ class _$AddTickerImpl implements AddTicker {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
     TResult? Function(RemoveAllTickers value)? removeAllTickers,
+    TResult? Function(CloseConnection value)? closeConnection,
+    TResult? Function(StartConnection value)? restartConnection,
+    TResult? Function(ReloadData value)? reloadData,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) {
@@ -388,10 +253,12 @@ class _$AddTickerImpl implements AddTicker {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
     TResult Function(RemoveAllTickers value)? removeAllTickers,
+    TResult Function(CloseConnection value)? closeConnection,
+    TResult Function(StartConnection value)? restartConnection,
+    TResult Function(ReloadData value)? reloadData,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),
@@ -476,10 +343,12 @@ class _$RemoveTickerImpl implements RemoveTicker {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
     required TResult Function() removeAllTickers,
+    required TResult Function() closeConnection,
+    required TResult Function() restartConnection,
+    required TResult Function() reloadData,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) {
@@ -489,10 +358,12 @@ class _$RemoveTickerImpl implements RemoveTicker {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
     TResult? Function()? removeAllTickers,
+    TResult? Function()? closeConnection,
+    TResult? Function()? restartConnection,
+    TResult? Function()? reloadData,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) {
@@ -502,10 +373,12 @@ class _$RemoveTickerImpl implements RemoveTicker {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
     TResult Function()? removeAllTickers,
+    TResult Function()? closeConnection,
+    TResult Function()? restartConnection,
+    TResult Function()? reloadData,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -519,10 +392,12 @@ class _$RemoveTickerImpl implements RemoveTicker {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
     required TResult Function(RemoveAllTickers value) removeAllTickers,
+    required TResult Function(CloseConnection value) closeConnection,
+    required TResult Function(StartConnection value) restartConnection,
+    required TResult Function(ReloadData value) reloadData,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) {
@@ -532,10 +407,12 @@ class _$RemoveTickerImpl implements RemoveTicker {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
     TResult? Function(RemoveAllTickers value)? removeAllTickers,
+    TResult? Function(CloseConnection value)? closeConnection,
+    TResult? Function(StartConnection value)? restartConnection,
+    TResult? Function(ReloadData value)? reloadData,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) {
@@ -545,10 +422,12 @@ class _$RemoveTickerImpl implements RemoveTicker {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
     TResult Function(RemoveAllTickers value)? removeAllTickers,
+    TResult Function(CloseConnection value)? closeConnection,
+    TResult Function(StartConnection value)? restartConnection,
+    TResult Function(ReloadData value)? reloadData,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),
@@ -607,10 +486,12 @@ class _$RemoveAllTickersImpl implements RemoveAllTickers {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
     required TResult Function() removeAllTickers,
+    required TResult Function() closeConnection,
+    required TResult Function() restartConnection,
+    required TResult Function() reloadData,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) {
@@ -620,10 +501,12 @@ class _$RemoveAllTickersImpl implements RemoveAllTickers {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
     TResult? Function()? removeAllTickers,
+    TResult? Function()? closeConnection,
+    TResult? Function()? restartConnection,
+    TResult? Function()? reloadData,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) {
@@ -633,10 +516,12 @@ class _$RemoveAllTickersImpl implements RemoveAllTickers {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
     TResult Function()? removeAllTickers,
+    TResult Function()? closeConnection,
+    TResult Function()? restartConnection,
+    TResult Function()? reloadData,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -650,10 +535,12 @@ class _$RemoveAllTickersImpl implements RemoveAllTickers {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
     required TResult Function(RemoveAllTickers value) removeAllTickers,
+    required TResult Function(CloseConnection value) closeConnection,
+    required TResult Function(StartConnection value) restartConnection,
+    required TResult Function(ReloadData value) reloadData,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) {
@@ -663,10 +550,12 @@ class _$RemoveAllTickersImpl implements RemoveAllTickers {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
     TResult? Function(RemoveAllTickers value)? removeAllTickers,
+    TResult? Function(CloseConnection value)? closeConnection,
+    TResult? Function(StartConnection value)? restartConnection,
+    TResult? Function(ReloadData value)? reloadData,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) {
@@ -676,10 +565,12 @@ class _$RemoveAllTickersImpl implements RemoveAllTickers {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
     TResult Function(RemoveAllTickers value)? removeAllTickers,
+    TResult Function(CloseConnection value)? closeConnection,
+    TResult Function(StartConnection value)? restartConnection,
+    TResult Function(ReloadData value)? reloadData,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),
@@ -693,6 +584,420 @@ class _$RemoveAllTickersImpl implements RemoveAllTickers {
 
 abstract class RemoveAllTickers implements WatchlistEvent {
   const factory RemoveAllTickers() = _$RemoveAllTickersImpl;
+}
+
+/// @nodoc
+abstract class _$$CloseConnectionImplCopyWith<$Res> {
+  factory _$$CloseConnectionImplCopyWith(_$CloseConnectionImpl value,
+          $Res Function(_$CloseConnectionImpl) then) =
+      __$$CloseConnectionImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CloseConnectionImplCopyWithImpl<$Res>
+    extends _$WatchlistEventCopyWithImpl<$Res, _$CloseConnectionImpl>
+    implements _$$CloseConnectionImplCopyWith<$Res> {
+  __$$CloseConnectionImplCopyWithImpl(
+      _$CloseConnectionImpl _value, $Res Function(_$CloseConnectionImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CloseConnectionImpl implements CloseConnection {
+  const _$CloseConnectionImpl();
+
+  @override
+  String toString() {
+    return 'WatchlistEvent.closeConnection()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CloseConnectionImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String ticker) addTicker,
+    required TResult Function(String ticker) removeTicker,
+    required TResult Function() removeAllTickers,
+    required TResult Function() closeConnection,
+    required TResult Function() restartConnection,
+    required TResult Function() reloadData,
+    required TResult Function() dismissDialog,
+    required TResult Function(ThemeMode themeMode) changeTheme,
+  }) {
+    return closeConnection();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String ticker)? addTicker,
+    TResult? Function(String ticker)? removeTicker,
+    TResult? Function()? removeAllTickers,
+    TResult? Function()? closeConnection,
+    TResult? Function()? restartConnection,
+    TResult? Function()? reloadData,
+    TResult? Function()? dismissDialog,
+    TResult? Function(ThemeMode themeMode)? changeTheme,
+  }) {
+    return closeConnection?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String ticker)? addTicker,
+    TResult Function(String ticker)? removeTicker,
+    TResult Function()? removeAllTickers,
+    TResult Function()? closeConnection,
+    TResult Function()? restartConnection,
+    TResult Function()? reloadData,
+    TResult Function()? dismissDialog,
+    TResult Function(ThemeMode themeMode)? changeTheme,
+    required TResult orElse(),
+  }) {
+    if (closeConnection != null) {
+      return closeConnection();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddTicker value) addTicker,
+    required TResult Function(RemoveTicker value) removeTicker,
+    required TResult Function(RemoveAllTickers value) removeAllTickers,
+    required TResult Function(CloseConnection value) closeConnection,
+    required TResult Function(StartConnection value) restartConnection,
+    required TResult Function(ReloadData value) reloadData,
+    required TResult Function(DismissDialog value) dismissDialog,
+    required TResult Function(ChangeTheme value) changeTheme,
+  }) {
+    return closeConnection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddTicker value)? addTicker,
+    TResult? Function(RemoveTicker value)? removeTicker,
+    TResult? Function(RemoveAllTickers value)? removeAllTickers,
+    TResult? Function(CloseConnection value)? closeConnection,
+    TResult? Function(StartConnection value)? restartConnection,
+    TResult? Function(ReloadData value)? reloadData,
+    TResult? Function(DismissDialog value)? dismissDialog,
+    TResult? Function(ChangeTheme value)? changeTheme,
+  }) {
+    return closeConnection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddTicker value)? addTicker,
+    TResult Function(RemoveTicker value)? removeTicker,
+    TResult Function(RemoveAllTickers value)? removeAllTickers,
+    TResult Function(CloseConnection value)? closeConnection,
+    TResult Function(StartConnection value)? restartConnection,
+    TResult Function(ReloadData value)? reloadData,
+    TResult Function(DismissDialog value)? dismissDialog,
+    TResult Function(ChangeTheme value)? changeTheme,
+    required TResult orElse(),
+  }) {
+    if (closeConnection != null) {
+      return closeConnection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloseConnection implements WatchlistEvent {
+  const factory CloseConnection() = _$CloseConnectionImpl;
+}
+
+/// @nodoc
+abstract class _$$StartConnectionImplCopyWith<$Res> {
+  factory _$$StartConnectionImplCopyWith(_$StartConnectionImpl value,
+          $Res Function(_$StartConnectionImpl) then) =
+      __$$StartConnectionImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$StartConnectionImplCopyWithImpl<$Res>
+    extends _$WatchlistEventCopyWithImpl<$Res, _$StartConnectionImpl>
+    implements _$$StartConnectionImplCopyWith<$Res> {
+  __$$StartConnectionImplCopyWithImpl(
+      _$StartConnectionImpl _value, $Res Function(_$StartConnectionImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$StartConnectionImpl implements StartConnection {
+  const _$StartConnectionImpl();
+
+  @override
+  String toString() {
+    return 'WatchlistEvent.restartConnection()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$StartConnectionImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String ticker) addTicker,
+    required TResult Function(String ticker) removeTicker,
+    required TResult Function() removeAllTickers,
+    required TResult Function() closeConnection,
+    required TResult Function() restartConnection,
+    required TResult Function() reloadData,
+    required TResult Function() dismissDialog,
+    required TResult Function(ThemeMode themeMode) changeTheme,
+  }) {
+    return restartConnection();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String ticker)? addTicker,
+    TResult? Function(String ticker)? removeTicker,
+    TResult? Function()? removeAllTickers,
+    TResult? Function()? closeConnection,
+    TResult? Function()? restartConnection,
+    TResult? Function()? reloadData,
+    TResult? Function()? dismissDialog,
+    TResult? Function(ThemeMode themeMode)? changeTheme,
+  }) {
+    return restartConnection?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String ticker)? addTicker,
+    TResult Function(String ticker)? removeTicker,
+    TResult Function()? removeAllTickers,
+    TResult Function()? closeConnection,
+    TResult Function()? restartConnection,
+    TResult Function()? reloadData,
+    TResult Function()? dismissDialog,
+    TResult Function(ThemeMode themeMode)? changeTheme,
+    required TResult orElse(),
+  }) {
+    if (restartConnection != null) {
+      return restartConnection();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddTicker value) addTicker,
+    required TResult Function(RemoveTicker value) removeTicker,
+    required TResult Function(RemoveAllTickers value) removeAllTickers,
+    required TResult Function(CloseConnection value) closeConnection,
+    required TResult Function(StartConnection value) restartConnection,
+    required TResult Function(ReloadData value) reloadData,
+    required TResult Function(DismissDialog value) dismissDialog,
+    required TResult Function(ChangeTheme value) changeTheme,
+  }) {
+    return restartConnection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddTicker value)? addTicker,
+    TResult? Function(RemoveTicker value)? removeTicker,
+    TResult? Function(RemoveAllTickers value)? removeAllTickers,
+    TResult? Function(CloseConnection value)? closeConnection,
+    TResult? Function(StartConnection value)? restartConnection,
+    TResult? Function(ReloadData value)? reloadData,
+    TResult? Function(DismissDialog value)? dismissDialog,
+    TResult? Function(ChangeTheme value)? changeTheme,
+  }) {
+    return restartConnection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddTicker value)? addTicker,
+    TResult Function(RemoveTicker value)? removeTicker,
+    TResult Function(RemoveAllTickers value)? removeAllTickers,
+    TResult Function(CloseConnection value)? closeConnection,
+    TResult Function(StartConnection value)? restartConnection,
+    TResult Function(ReloadData value)? reloadData,
+    TResult Function(DismissDialog value)? dismissDialog,
+    TResult Function(ChangeTheme value)? changeTheme,
+    required TResult orElse(),
+  }) {
+    if (restartConnection != null) {
+      return restartConnection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StartConnection implements WatchlistEvent {
+  const factory StartConnection() = _$StartConnectionImpl;
+}
+
+/// @nodoc
+abstract class _$$ReloadDataImplCopyWith<$Res> {
+  factory _$$ReloadDataImplCopyWith(
+          _$ReloadDataImpl value, $Res Function(_$ReloadDataImpl) then) =
+      __$$ReloadDataImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ReloadDataImplCopyWithImpl<$Res>
+    extends _$WatchlistEventCopyWithImpl<$Res, _$ReloadDataImpl>
+    implements _$$ReloadDataImplCopyWith<$Res> {
+  __$$ReloadDataImplCopyWithImpl(
+      _$ReloadDataImpl _value, $Res Function(_$ReloadDataImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ReloadDataImpl implements ReloadData {
+  const _$ReloadDataImpl();
+
+  @override
+  String toString() {
+    return 'WatchlistEvent.reloadData()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ReloadDataImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String ticker) addTicker,
+    required TResult Function(String ticker) removeTicker,
+    required TResult Function() removeAllTickers,
+    required TResult Function() closeConnection,
+    required TResult Function() restartConnection,
+    required TResult Function() reloadData,
+    required TResult Function() dismissDialog,
+    required TResult Function(ThemeMode themeMode) changeTheme,
+  }) {
+    return reloadData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String ticker)? addTicker,
+    TResult? Function(String ticker)? removeTicker,
+    TResult? Function()? removeAllTickers,
+    TResult? Function()? closeConnection,
+    TResult? Function()? restartConnection,
+    TResult? Function()? reloadData,
+    TResult? Function()? dismissDialog,
+    TResult? Function(ThemeMode themeMode)? changeTheme,
+  }) {
+    return reloadData?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String ticker)? addTicker,
+    TResult Function(String ticker)? removeTicker,
+    TResult Function()? removeAllTickers,
+    TResult Function()? closeConnection,
+    TResult Function()? restartConnection,
+    TResult Function()? reloadData,
+    TResult Function()? dismissDialog,
+    TResult Function(ThemeMode themeMode)? changeTheme,
+    required TResult orElse(),
+  }) {
+    if (reloadData != null) {
+      return reloadData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddTicker value) addTicker,
+    required TResult Function(RemoveTicker value) removeTicker,
+    required TResult Function(RemoveAllTickers value) removeAllTickers,
+    required TResult Function(CloseConnection value) closeConnection,
+    required TResult Function(StartConnection value) restartConnection,
+    required TResult Function(ReloadData value) reloadData,
+    required TResult Function(DismissDialog value) dismissDialog,
+    required TResult Function(ChangeTheme value) changeTheme,
+  }) {
+    return reloadData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(AddTicker value)? addTicker,
+    TResult? Function(RemoveTicker value)? removeTicker,
+    TResult? Function(RemoveAllTickers value)? removeAllTickers,
+    TResult? Function(CloseConnection value)? closeConnection,
+    TResult? Function(StartConnection value)? restartConnection,
+    TResult? Function(ReloadData value)? reloadData,
+    TResult? Function(DismissDialog value)? dismissDialog,
+    TResult? Function(ChangeTheme value)? changeTheme,
+  }) {
+    return reloadData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddTicker value)? addTicker,
+    TResult Function(RemoveTicker value)? removeTicker,
+    TResult Function(RemoveAllTickers value)? removeAllTickers,
+    TResult Function(CloseConnection value)? closeConnection,
+    TResult Function(StartConnection value)? restartConnection,
+    TResult Function(ReloadData value)? reloadData,
+    TResult Function(DismissDialog value)? dismissDialog,
+    TResult Function(ChangeTheme value)? changeTheme,
+    required TResult orElse(),
+  }) {
+    if (reloadData != null) {
+      return reloadData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReloadData implements WatchlistEvent {
+  const factory ReloadData() = _$ReloadDataImpl;
 }
 
 /// @nodoc
@@ -733,10 +1038,12 @@ class _$DismissDialogImpl implements DismissDialog {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
     required TResult Function() removeAllTickers,
+    required TResult Function() closeConnection,
+    required TResult Function() restartConnection,
+    required TResult Function() reloadData,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) {
@@ -746,10 +1053,12 @@ class _$DismissDialogImpl implements DismissDialog {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
     TResult? Function()? removeAllTickers,
+    TResult? Function()? closeConnection,
+    TResult? Function()? restartConnection,
+    TResult? Function()? reloadData,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) {
@@ -759,10 +1068,12 @@ class _$DismissDialogImpl implements DismissDialog {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
     TResult Function()? removeAllTickers,
+    TResult Function()? closeConnection,
+    TResult Function()? restartConnection,
+    TResult Function()? reloadData,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -776,10 +1087,12 @@ class _$DismissDialogImpl implements DismissDialog {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
     required TResult Function(RemoveAllTickers value) removeAllTickers,
+    required TResult Function(CloseConnection value) closeConnection,
+    required TResult Function(StartConnection value) restartConnection,
+    required TResult Function(ReloadData value) reloadData,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) {
@@ -789,10 +1102,12 @@ class _$DismissDialogImpl implements DismissDialog {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
     TResult? Function(RemoveAllTickers value)? removeAllTickers,
+    TResult? Function(CloseConnection value)? closeConnection,
+    TResult? Function(StartConnection value)? restartConnection,
+    TResult? Function(ReloadData value)? reloadData,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) {
@@ -802,10 +1117,12 @@ class _$DismissDialogImpl implements DismissDialog {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
     TResult Function(RemoveAllTickers value)? removeAllTickers,
+    TResult Function(CloseConnection value)? closeConnection,
+    TResult Function(StartConnection value)? restartConnection,
+    TResult Function(ReloadData value)? reloadData,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),
@@ -886,10 +1203,12 @@ class _$ChangeThemeImpl implements ChangeTheme {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String value) inputChanged,
     required TResult Function(String ticker) addTicker,
     required TResult Function(String ticker) removeTicker,
     required TResult Function() removeAllTickers,
+    required TResult Function() closeConnection,
+    required TResult Function() restartConnection,
+    required TResult Function() reloadData,
     required TResult Function() dismissDialog,
     required TResult Function(ThemeMode themeMode) changeTheme,
   }) {
@@ -899,10 +1218,12 @@ class _$ChangeThemeImpl implements ChangeTheme {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String value)? inputChanged,
     TResult? Function(String ticker)? addTicker,
     TResult? Function(String ticker)? removeTicker,
     TResult? Function()? removeAllTickers,
+    TResult? Function()? closeConnection,
+    TResult? Function()? restartConnection,
+    TResult? Function()? reloadData,
     TResult? Function()? dismissDialog,
     TResult? Function(ThemeMode themeMode)? changeTheme,
   }) {
@@ -912,10 +1233,12 @@ class _$ChangeThemeImpl implements ChangeTheme {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String value)? inputChanged,
     TResult Function(String ticker)? addTicker,
     TResult Function(String ticker)? removeTicker,
     TResult Function()? removeAllTickers,
+    TResult Function()? closeConnection,
+    TResult Function()? restartConnection,
+    TResult Function()? reloadData,
     TResult Function()? dismissDialog,
     TResult Function(ThemeMode themeMode)? changeTheme,
     required TResult orElse(),
@@ -929,10 +1252,12 @@ class _$ChangeThemeImpl implements ChangeTheme {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InputChanged value) inputChanged,
     required TResult Function(AddTicker value) addTicker,
     required TResult Function(RemoveTicker value) removeTicker,
     required TResult Function(RemoveAllTickers value) removeAllTickers,
+    required TResult Function(CloseConnection value) closeConnection,
+    required TResult Function(StartConnection value) restartConnection,
+    required TResult Function(ReloadData value) reloadData,
     required TResult Function(DismissDialog value) dismissDialog,
     required TResult Function(ChangeTheme value) changeTheme,
   }) {
@@ -942,10 +1267,12 @@ class _$ChangeThemeImpl implements ChangeTheme {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InputChanged value)? inputChanged,
     TResult? Function(AddTicker value)? addTicker,
     TResult? Function(RemoveTicker value)? removeTicker,
     TResult? Function(RemoveAllTickers value)? removeAllTickers,
+    TResult? Function(CloseConnection value)? closeConnection,
+    TResult? Function(StartConnection value)? restartConnection,
+    TResult? Function(ReloadData value)? reloadData,
     TResult? Function(DismissDialog value)? dismissDialog,
     TResult? Function(ChangeTheme value)? changeTheme,
   }) {
@@ -955,10 +1282,12 @@ class _$ChangeThemeImpl implements ChangeTheme {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InputChanged value)? inputChanged,
     TResult Function(AddTicker value)? addTicker,
     TResult Function(RemoveTicker value)? removeTicker,
     TResult Function(RemoveAllTickers value)? removeAllTickers,
+    TResult Function(CloseConnection value)? closeConnection,
+    TResult Function(StartConnection value)? restartConnection,
+    TResult Function(ReloadData value)? reloadData,
     TResult Function(DismissDialog value)? dismissDialog,
     TResult Function(ChangeTheme value)? changeTheme,
     required TResult orElse(),
@@ -982,9 +1311,8 @@ abstract class ChangeTheme implements WatchlistEvent {
 /// @nodoc
 mixin _$WatchlistState {
   ThemeMode get selectedTheme => throw _privateConstructorUsedError;
-  String? get addTickerValue => throw _privateConstructorUsedError;
-  Map<String, TickerResult> get myTickersResults =>
-      throw _privateConstructorUsedError;
+  Map<String, WatchlistData> get data => throw _privateConstructorUsedError;
+  String? get loadingMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $WatchlistStateCopyWith<WatchlistState> get copyWith =>
@@ -999,8 +1327,8 @@ abstract class $WatchlistStateCopyWith<$Res> {
   @useResult
   $Res call(
       {ThemeMode selectedTheme,
-      String? addTickerValue,
-      Map<String, TickerResult> myTickersResults});
+      Map<String, WatchlistData> data,
+      String? loadingMessage});
 }
 
 /// @nodoc
@@ -1017,22 +1345,22 @@ class _$WatchlistStateCopyWithImpl<$Res, $Val extends WatchlistState>
   @override
   $Res call({
     Object? selectedTheme = null,
-    Object? addTickerValue = freezed,
-    Object? myTickersResults = null,
+    Object? data = null,
+    Object? loadingMessage = freezed,
   }) {
     return _then(_value.copyWith(
       selectedTheme: null == selectedTheme
           ? _value.selectedTheme
           : selectedTheme // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
-      addTickerValue: freezed == addTickerValue
-          ? _value.addTickerValue
-          : addTickerValue // ignore: cast_nullable_to_non_nullable
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, WatchlistData>,
+      loadingMessage: freezed == loadingMessage
+          ? _value.loadingMessage
+          : loadingMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      myTickersResults: null == myTickersResults
-          ? _value.myTickersResults
-          : myTickersResults // ignore: cast_nullable_to_non_nullable
-              as Map<String, TickerResult>,
     ) as $Val);
   }
 }
@@ -1047,8 +1375,8 @@ abstract class _$$WatchlistStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {ThemeMode selectedTheme,
-      String? addTickerValue,
-      Map<String, TickerResult> myTickersResults});
+      Map<String, WatchlistData> data,
+      String? loadingMessage});
 }
 
 /// @nodoc
@@ -1063,22 +1391,22 @@ class __$$WatchlistStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? selectedTheme = null,
-    Object? addTickerValue = freezed,
-    Object? myTickersResults = null,
+    Object? data = null,
+    Object? loadingMessage = freezed,
   }) {
     return _then(_$WatchlistStateImpl(
       selectedTheme: null == selectedTheme
           ? _value.selectedTheme
           : selectedTheme // ignore: cast_nullable_to_non_nullable
               as ThemeMode,
-      addTickerValue: freezed == addTickerValue
-          ? _value.addTickerValue
-          : addTickerValue // ignore: cast_nullable_to_non_nullable
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, WatchlistData>,
+      loadingMessage: freezed == loadingMessage
+          ? _value.loadingMessage
+          : loadingMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-      myTickersResults: null == myTickersResults
-          ? _value._myTickersResults
-          : myTickersResults // ignore: cast_nullable_to_non_nullable
-              as Map<String, TickerResult>,
     ));
   }
 }
@@ -1088,25 +1416,26 @@ class __$$WatchlistStateImplCopyWithImpl<$Res>
 class _$WatchlistStateImpl implements _WatchlistState {
   const _$WatchlistStateImpl(
       {required this.selectedTheme,
-      this.addTickerValue,
-      required final Map<String, TickerResult> myTickersResults})
-      : _myTickersResults = myTickersResults;
+      required final Map<String, WatchlistData> data,
+      this.loadingMessage})
+      : _data = data;
 
   @override
   final ThemeMode selectedTheme;
+  final Map<String, WatchlistData> _data;
   @override
-  final String? addTickerValue;
-  final Map<String, TickerResult> _myTickersResults;
-  @override
-  Map<String, TickerResult> get myTickersResults {
-    if (_myTickersResults is EqualUnmodifiableMapView) return _myTickersResults;
+  Map<String, WatchlistData> get data {
+    if (_data is EqualUnmodifiableMapView) return _data;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_myTickersResults);
+    return EqualUnmodifiableMapView(_data);
   }
 
   @override
+  final String? loadingMessage;
+
+  @override
   String toString() {
-    return 'WatchlistState(selectedTheme: $selectedTheme, addTickerValue: $addTickerValue, myTickersResults: $myTickersResults)';
+    return 'WatchlistState(selectedTheme: $selectedTheme, data: $data, loadingMessage: $loadingMessage)';
   }
 
   @override
@@ -1116,15 +1445,14 @@ class _$WatchlistStateImpl implements _WatchlistState {
             other is _$WatchlistStateImpl &&
             (identical(other.selectedTheme, selectedTheme) ||
                 other.selectedTheme == selectedTheme) &&
-            (identical(other.addTickerValue, addTickerValue) ||
-                other.addTickerValue == addTickerValue) &&
-            const DeepCollectionEquality()
-                .equals(other._myTickersResults, _myTickersResults));
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            (identical(other.loadingMessage, loadingMessage) ||
+                other.loadingMessage == loadingMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, selectedTheme, addTickerValue,
-      const DeepCollectionEquality().hash(_myTickersResults));
+  int get hashCode => Object.hash(runtimeType, selectedTheme,
+      const DeepCollectionEquality().hash(_data), loadingMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -1136,17 +1464,16 @@ class _$WatchlistStateImpl implements _WatchlistState {
 
 abstract class _WatchlistState implements WatchlistState {
   const factory _WatchlistState(
-          {required final ThemeMode selectedTheme,
-          final String? addTickerValue,
-          required final Map<String, TickerResult> myTickersResults}) =
-      _$WatchlistStateImpl;
+      {required final ThemeMode selectedTheme,
+      required final Map<String, WatchlistData> data,
+      final String? loadingMessage}) = _$WatchlistStateImpl;
 
   @override
   ThemeMode get selectedTheme;
   @override
-  String? get addTickerValue;
+  Map<String, WatchlistData> get data;
   @override
-  Map<String, TickerResult> get myTickersResults;
+  String? get loadingMessage;
   @override
   @JsonKey(ignore: true)
   _$$WatchlistStateImplCopyWith<_$WatchlistStateImpl> get copyWith =>

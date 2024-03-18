@@ -3,7 +3,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:stock_watchlist/global/ext/context_extensions.dart';
 import 'package:stock_watchlist/global/util/dimens.dart';
 
-import 'neumorphic_wrapper.dart';
+import 'glass_wrapper.dart';
 
 class WatchlistTile extends StatelessWidget {
   const WatchlistTile({
@@ -15,6 +15,7 @@ class WatchlistTile extends StatelessWidget {
     this.trailing,
     this.contentPadding,
     this.enabled = true,
+    this.slidable = false,
     this.onTap,
     this.onTapDelete,
     this.onTapRefresh,
@@ -26,6 +27,7 @@ class WatchlistTile extends StatelessWidget {
   final Widget? trailing;
   final EdgeInsets? contentPadding;
   final bool enabled;
+  final bool slidable;
   final GestureTapCallback? onTap;
   final VoidCallback? onTapDelete;
   final VoidCallback? onTapRefresh;
@@ -35,20 +37,21 @@ class WatchlistTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Slidable(
       key: Key(tickerKey),
+      enabled: slidable,
       endActionPane: ActionPane(
         motion: const ScrollMotion(),
         children: [
           SlidableAction(
             flex: 1,
             onPressed: (context) => onTapDelete?.call(),
-            backgroundColor: context.colors.background,
+            backgroundColor: context.colors.outline.withOpacity(OPACITY_TILE),
             foregroundColor: context.colors.errorContainer,
             icon: Icons.delete_outline,
             label: 'Delete',
           ),
         ],
       ),
-      child: NeumorphicWrapper(
+      child: GlassWrapper(
         child: ListTile(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(CARD_RADIUS),
